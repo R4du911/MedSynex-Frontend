@@ -1,0 +1,35 @@
+<mat-sidenav-container class="navbar-content-container" fxFlexFill>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a (click)="sidenav.toggle()" mat-list-item>Close</a>
+      <a
+        *ngIf="isUserLoggedIn()"
+        mat-list-item
+        (click)="logout()"
+        matTooltip="Logout"
+      >
+        <mat-icon>logout</mat-icon>
+      </a>
+
+      <a
+        *ngIf="!isUserLoggedIn()"
+        routerLink="/login"
+        mat-list-item
+        matTooltip="Login"
+      >
+        <mat-icon>login</mat-icon>
+      </a>
+
+      <span [style.padding]="'0 1rem'" *ngIf="isUserLoggedIn()">
+        Hello, {{ currentUser$ | async }}</span>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (sideNavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <ng-content></ng-content>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

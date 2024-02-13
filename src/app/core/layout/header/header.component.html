@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onSidenavToggle()" fxShow="true" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div>
+    <a class="app-title" routerLink="/home">MedSynex</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs fxHide.sm>
+    <ul fxLayout fxLayoutGap="1rem" class="navigation-items">
+      <li>
+        <a
+          *ngIf="isUserLoggedIn()"
+          mat-button
+          (click)="logout()"
+          matTooltip="Logout"
+        >
+          <mat-icon class="navbar-icon">logout</mat-icon>
+        </a>
+
+        <a
+          *ngIf="!isUserLoggedIn()"
+          routerLink="/login"
+          mat-button
+          matTooltip="Login"
+        >
+          <mat-icon class="navbar-icon">login</mat-icon>
+        </a>
+
+        <a *ngIf="isUserLoggedIn()" class="user-navbar">
+          Hello, {{ currentUser$ | async }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+

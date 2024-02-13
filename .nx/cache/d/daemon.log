@@ -1,0 +1,404 @@
+[NX Daemon Server] - 2024-02-13T14:29:33.202Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:29:33.209Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:29:33.214Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:29:33.230Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-02-13T14:29:33.230Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:29:33.237Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:29:33.239Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:29:33.240Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:29:33.240Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:29:33.737Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:29:33.750Z - Time taken for 'total for creating and serializing project graph' 500.1664999999921ms
+[NX Daemon Server] - 2024-02-13T14:29:33.778Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:29:33.779Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 500. Response time: 42.
+[NX Daemon Server] - 2024-02-13T14:29:33.793Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:32:09.223Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:32:09.224Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:09.224Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:32:09.225Z - Time taken for 'changed-projects' 0.1027000000467524ms
+[NX Daemon Server] - 2024-02-13T14:32:09.225Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:09.225Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:32:09.339Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:32:09.339Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:32:09.339Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:32:09.419Z - Time taken for 'hash changed files from watcher' 0.5071999999927357ms
+[NX Daemon Server] - 2024-02-13T14:32:30.233Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:32:30.237Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:32:30.238Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:30.238Z - Time taken for 'changed-projects' 0.10949999996228144ms
+[NX Daemon Server] - 2024-02-13T14:32:30.238Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:30.238Z - Handled FILE-WATCH-CHANGED. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-02-13T14:32:30.449Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:32:30.449Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:32:30.449Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:32:30.620Z - Time taken for 'hash changed files from watcher' 0.25880000001052395ms
+[NX Daemon Server] - 2024-02-13T14:32:48.440Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:32:48.442Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:48.443Z - Time taken for 'changed-projects' 0.5292999999946915ms
+[NX Daemon Server] - 2024-02-13T14:32:48.443Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:32:48.443Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:32:48.443Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:32:48.853Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:32:48.853Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:32:48.853Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:32:48.984Z - Time taken for 'hash changed files from watcher' 0.27079999999841675ms
+[NX Daemon Server] - 2024-02-13T14:33:24.072Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:33:24.073Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:33:24.073Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:33:24.074Z - Time taken for 'changed-projects' 0.1339000000152737ms
+[NX Daemon Server] - 2024-02-13T14:33:24.074Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:33:24.074Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:33:24.888Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:33:24.888Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:33:24.888Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:33:24.962Z - Time taken for 'hash changed files from watcher' 0.40729999996256083ms
+[NX Daemon Server] - 2024-02-13T14:34:11.596Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:34:11.600Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:34:11.602Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:34:11.603Z - Time taken for 'changed-projects' 0.2938000001013279ms
+[NX Daemon Server] - 2024-02-13T14:34:11.603Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:34:11.603Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:34:13.210Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:34:13.210Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:34:13.210Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:34:13.264Z - Time taken for 'hash changed files from watcher' 0.6239000000059605ms
+[NX Daemon Server] - 2024-02-13T14:34:38.188Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:34:38.193Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:34:38.195Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:34:38.195Z - Time taken for 'changed-projects' 0.49719999998342246ms
+[NX Daemon Server] - 2024-02-13T14:34:38.195Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:34:38.195Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T14:34:41.399Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:34:41.399Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:34:41.399Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:34:41.453Z - Time taken for 'hash changed files from watcher' 0.32030000002123415ms
+[NX Daemon Server] - 2024-02-13T14:37:37.945Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:37:37.970Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:37:37.972Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:37:37.972Z - Time taken for 'changed-projects' 0.11069999996107072ms
+[NX Daemon Server] - 2024-02-13T14:37:37.972Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:37:37.972Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T14:37:44.372Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:37:44.372Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:37:44.372Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:37:44.431Z - Time taken for 'hash changed files from watcher' 0.5337999999755993ms
+[NX Daemon Server] - 2024-02-13T14:37:56.696Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:37:56.703Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:37:56.705Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:37:56.706Z - Time taken for 'changed-projects' 0.1596999999601394ms
+[NX Daemon Server] - 2024-02-13T14:37:56.706Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:37:56.706Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-02-13T14:38:03.107Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:38:03.107Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:38:03.107Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:38:03.375Z - Time taken for 'hash changed files from watcher' 0.34779999998863786ms
+[NX Daemon Server] - 2024-02-13T14:38:17.701Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T14:38:17.702Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:38:17.702Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:38:17.702Z - Time taken for 'changed-projects' 0.07780000008642673ms
+[NX Daemon Server] - 2024-02-13T14:38:17.702Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:38:17.702Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T14:38:18.053Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:38:18.053Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T14:38:18.053Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T14:38:18.053Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T14:38:51.202Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:38:51.205Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:38:51.213Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:38:51.216Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-02-13T14:38:51.216Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:38:51.218Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:38:51.220Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:38:51.220Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:38:51.220Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:38:51.364Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:38:51.368Z - Time taken for 'total for creating and serializing project graph' 144.9836999999825ms
+[NX Daemon Server] - 2024-02-13T14:38:51.368Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:38:51.368Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 145. Response time: 5.
+[NX Daemon Server] - 2024-02-13T14:38:51.374Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:41:15.987Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T14:41:15.988Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:41:15.989Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:41:15.989Z - Time taken for 'changed-projects' 0.09429999999701977ms
+[NX Daemon Server] - 2024-02-13T14:41:15.989Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:41:15.990Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-02-13T14:41:16.090Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:41:16.090Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T14:41:16.090Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:41:16.161Z - Time taken for 'hash changed files from watcher' 0.3404999999329448ms
+[NX Daemon Server] - 2024-02-13T14:41:16.324Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:41:16.328Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T14:41:16.328Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T14:41:16.328Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T14:41:20.191Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:41:20.194Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:41:20.196Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:41:20.198Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:41:20.211Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:41:20.220Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:41:20.222Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:41:20.223Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:41:20.223Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:41:20.578Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:41:20.583Z - Time taken for 'total for creating and serializing project graph' 358.32790000003297ms
+[NX Daemon Server] - 2024-02-13T14:41:20.584Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:41:20.584Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 358. Response time: 6.
+[NX Daemon Server] - 2024-02-13T14:41:20.592Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:44:03.352Z - [WATCHER]: src/app/core/authentication/service/authentication.service.ts was modified
+[NX Daemon Server] - 2024-02-13T14:44:03.353Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:44:03.354Z - Time taken for 'changed-projects' 0.12789999996311963ms
+[NX Daemon Server] - 2024-02-13T14:44:03.354Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:03.355Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:44:03.355Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-02-13T14:44:03.454Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:44:03.454Z - [REQUEST]: src/app/core/authentication/service/authentication.service.ts
+[NX Daemon Server] - 2024-02-13T14:44:03.455Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:44:03.537Z - Time taken for 'hash changed files from watcher' 0.4061000000219792ms
+[NX Daemon Server] - 2024-02-13T14:44:15.059Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:15.168Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:15.372Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:15.606Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:18.713Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:44:18.803Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:47:31.849Z - [WATCHER]: src/app/core/layout/navbar/navbar.component.ts was modified
+[NX Daemon Server] - 2024-02-13T14:47:31.850Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:47:31.850Z - Time taken for 'changed-projects' 0.058200000086799264ms
+[NX Daemon Server] - 2024-02-13T14:47:31.850Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:47:31.850Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:47:31.850Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T14:47:32.064Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:47:32.064Z - [REQUEST]: src/app/core/layout/navbar/navbar.component.ts
+[NX Daemon Server] - 2024-02-13T14:47:32.064Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:47:32.524Z - Time taken for 'hash changed files from watcher' 0.350899999961257ms
+[NX Daemon Server] - 2024-02-13T14:47:34.330Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:47:36.318Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:47:36.681Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:47:36.790Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:28.389Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:28.399Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T14:51:28.403Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:51:28.404Z - Time taken for 'changed-projects' 1.4088000000920147ms
+[NX Daemon Server] - 2024-02-13T14:51:28.404Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:51:28.404Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:51:28.830Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:51:28.830Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T14:51:28.831Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:29.000Z - Time taken for 'hash changed files from watcher' 2.091000000014901ms
+[NX Daemon Server] - 2024-02-13T14:51:29.129Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:29.139Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T14:51:29.139Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T14:51:29.139Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T14:51:33.621Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:51:33.626Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:51:33.628Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:51:33.631Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-02-13T14:51:33.632Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:51:33.635Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:51:33.636Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:51:33.636Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:33.636Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:33.920Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:51:33.923Z - Time taken for 'total for creating and serializing project graph' 285.1077000000514ms
+[NX Daemon Server] - 2024-02-13T14:51:33.923Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:51:33.924Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 286. Response time: 4.
+[NX Daemon Server] - 2024-02-13T14:51:33.930Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:51:36.997Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:37.820Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:50.277Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:50.280Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T14:51:50.282Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:51:50.282Z - Time taken for 'changed-projects' 0.1791000000666827ms
+[NX Daemon Server] - 2024-02-13T14:51:50.283Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:51:50.283Z - Handled FILE-WATCH-CHANGED. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-02-13T14:51:50.395Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:51:50.396Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T14:51:50.396Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:50.526Z - Time taken for 'hash changed files from watcher' 0.6837999999988824ms
+[NX Daemon Server] - 2024-02-13T14:51:50.850Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:50.856Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T14:51:50.856Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T14:51:50.856Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T14:51:55.961Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:51:55.986Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:51:55.989Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:51:55.992Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:51:55.996Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:51:56.001Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:51:56.026Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:51:56.026Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:56.026Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:51:56.583Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:51:56.591Z - Time taken for 'total for creating and serializing project graph' 582.0511999998707ms
+[NX Daemon Server] - 2024-02-13T14:51:56.595Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:51:56.595Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 583. Response time: 12.
+[NX Daemon Server] - 2024-02-13T14:51:56.600Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:51:57.859Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:51:58.186Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:52:52.539Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-02-13T14:52:52.540Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:52:52.541Z - Time taken for 'changed-projects' 0.19530000002123415ms
+[NX Daemon Server] - 2024-02-13T14:52:52.541Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:52:52.541Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:52:52.542Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-02-13T14:52:52.645Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:52:52.646Z - [REQUEST]: src/app/core/layout/header/header.component.ts,src/app/core/layout/navbar/navbar.component.ts
+[NX Daemon Server] - 2024-02-13T14:52:52.646Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:52:52.742Z - Time taken for 'hash changed files from watcher' 0.9307999999728054ms
+[NX Daemon Server] - 2024-02-13T14:53:05.411Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:05.505Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:06.081Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:06.221Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:06.332Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:06.426Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:06.520Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:10.327Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:53:10.500Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:54:53.090Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:54:57.230Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:54:59.164Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:01.950Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:02.004Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:02.068Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:02.129Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:02.185Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:02.396Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:08.319Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:14.509Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:14.513Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T14:55:14.514Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T14:55:14.514Z - Time taken for 'changed-projects' 0.08459999994374812ms
+[NX Daemon Server] - 2024-02-13T14:55:14.516Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T14:55:14.516Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-02-13T14:55:14.715Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:55:14.715Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T14:55:14.716Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:55:14.835Z - Time taken for 'hash changed files from watcher' 0.49890000000596046ms
+[NX Daemon Server] - 2024-02-13T14:55:15.116Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:15.122Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T14:55:15.122Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T14:55:15.123Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T14:55:16.741Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T14:55:16.745Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T14:55:16.747Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:55:16.748Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:55:16.750Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T14:55:16.752Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T14:55:16.753Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T14:55:16.753Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:55:16.753Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T14:55:16.906Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T14:55:16.910Z - Time taken for 'total for creating and serializing project graph' 153.84049999993294ms
+[NX Daemon Server] - 2024-02-13T14:55:16.911Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T14:55:16.911Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 153. Response time: 6.
+[NX Daemon Server] - 2024-02-13T14:55:16.918Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T14:55:18.297Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:18.476Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:18.555Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:18.783Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:18.845Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:43.116Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:43.209Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:43.490Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:43.663Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:43.756Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:47.277Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T14:55:47.339Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:26.539Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T15:01:26.540Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T15:01:26.540Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:26.540Z - Time taken for 'changed-projects' 0.10030000004917383ms
+[NX Daemon Server] - 2024-02-13T15:01:26.541Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T15:01:26.541Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-02-13T15:01:26.645Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:01:26.645Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T15:01:26.645Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:01:26.756Z - Time taken for 'hash changed files from watcher' 0.30949999997392297ms
+[NX Daemon Server] - 2024-02-13T15:01:27.137Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:27.138Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T15:01:27.138Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T15:01:27.138Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T15:01:30.341Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T15:01:30.355Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T15:01:30.359Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T15:01:30.369Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-02-13T15:01:30.372Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T15:01:30.395Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T15:01:30.398Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:01:30.398Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:01:30.398Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:01:30.671Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T15:01:30.675Z - Time taken for 'total for creating and serializing project graph' 276.18270000000484ms
+[NX Daemon Server] - 2024-02-13T15:01:30.693Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T15:01:30.693Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 276. Response time: 22.
+[NX Daemon Server] - 2024-02-13T15:01:30.708Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T15:01:34.301Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.361Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.424Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.499Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.531Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.623Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:01:34.687Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:32.996Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:33.242Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:33.308Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:33.631Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:33.761Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:34.202Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:34.489Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:37.506Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:37.564Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:37.750Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:05:37.812Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:06:00.849Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:06:00.852Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T15:06:00.854Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T15:06:00.854Z - Time taken for 'changed-projects' 0.13959999987855554ms
+[NX Daemon Server] - 2024-02-13T15:06:00.854Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T15:06:00.854Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T15:06:00.957Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:06:00.957Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T15:06:00.957Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:06:01.018Z - Time taken for 'hash changed files from watcher' 0.4505000002682209ms
+[NX Daemon Server] - 2024-02-13T15:06:01.033Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:06:01.430Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:06:01.435Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T15:06:01.435Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T15:06:01.435Z - Server stopped because: "Lock file changed"
+[NX Daemon Server] - 2024-02-13T15:20:18.843Z - Started listening on: \\.\pipe\nx\C:\Users\Radu\AppData\Local\Temp\e28a5575aa63eaa7cbc6\d.sock
+[NX Daemon Server] - 2024-02-13T15:20:18.848Z - [WATCHER]: Subscribed to changes within: C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (native)
+[NX Daemon Server] - 2024-02-13T15:20:18.858Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T15:20:18.861Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-02-13T15:20:18.861Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-02-13T15:20:18.863Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-02-13T15:20:18.864Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:20:18.864Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:20:18.864Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:20:18.992Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-02-13T15:20:18.995Z - Time taken for 'total for creating and serializing project graph' 129.31969999987632ms
+[NX Daemon Server] - 2024-02-13T15:20:18.995Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-02-13T15:20:18.995Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 129. Response time: 3.
+[NX Daemon Server] - 2024-02-13T15:20:19.000Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-02-13T15:20:45.059Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:20:45.061Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T15:20:45.064Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T15:20:45.065Z - Time taken for 'changed-projects' 0.2935000001452863ms
+[NX Daemon Server] - 2024-02-13T15:20:45.065Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T15:20:45.065Z - Handled FILE-WATCH-CHANGED. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-02-13T15:20:45.178Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:20:45.178Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T15:20:45.178Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:20:45.289Z - Time taken for 'hash changed files from watcher' 0.2819999996572733ms
+[NX Daemon Server] - 2024-02-13T15:21:09.658Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:21:09.663Z - [WATCHER]: package.json was modified
+[NX Daemon Server] - 2024-02-13T15:21:09.665Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-02-13T15:21:09.665Z - Time taken for 'changed-projects' 0.06359999999403954ms
+[NX Daemon Server] - 2024-02-13T15:21:09.665Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-02-13T15:21:09.665Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-02-13T15:21:09.866Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-02-13T15:21:09.866Z - [REQUEST]: package.json
+[NX Daemon Server] - 2024-02-13T15:21:09.866Z - [REQUEST]: 
+[NX Daemon Server] - 2024-02-13T15:21:09.997Z - Time taken for 'hash changed files from watcher' 0.5157999997027218ms
+[NX Daemon Server] - 2024-02-13T15:22:28.642Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-02-13T15:22:28.643Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (sources)
+[NX Daemon Server] - 2024-02-13T15:22:28.643Z - [WATCHER]: Stopping the watcher for C:\Users\Radu\Desktop\Facultate\Licenta\MedSynex\client\medsynex-client (outputs)
+[NX Daemon Server] - 2024-02-13T15:22:28.643Z - Server stopped because: "Lock file changed"

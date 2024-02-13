@@ -1,0 +1,45 @@
+ul {
+  list-style: none;
+}
+main {
+  padding: 2rem;
+  height: calc(100% - 4rem - 64px);
+}
+
+a.app-title {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+}
+
+#welcome-username {
+  cursor: auto;
+}
+
+:host ::ng-deep a:has(img) span.mdc-button__label {
+  line-height: 14px !important;
+}
+
+.vertical-line {
+  border-left: 2px solid white;
+  height: 100%;
+}
+
+.user-navbar {
+  font-style: normal;
+  cursor: default;
+  font-size: 16px;
+}
+
+::ng-deep mat-icon {
+  margin-right: 0 !important;
+}
+
+.icon-button {
+  padding: 0;
+}
