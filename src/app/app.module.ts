@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginModule } from "./login/login.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HeaderComponent,
     NavbarComponent,
     LoginModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule
