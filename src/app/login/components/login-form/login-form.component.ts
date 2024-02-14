@@ -41,6 +41,7 @@ export class LoginFormComponent {
 
         this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
         this.router.navigate(['home']);
+        this.handleErrorService.handleSuccess("Successfully logged in");
 
       },
       (error: CustomErrorResponse) => {
