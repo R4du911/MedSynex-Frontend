@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/layout/header/header.component';
@@ -12,7 +12,20 @@ import {AuthorizationGuard} from "./utils/authorization-guard.service";
 import {HandleErrorService} from "./utils/error-handling/handle-error.service";
 import {Interceptor} from "./utils/http-interceptor";
 import {ToastrModule} from "ngx-toastr";
+import {AuthorizationService} from "./core/authorization/service/authorization.service";
+import {AuthenticationService} from "./core/authentication/service/authentication.service";
+import {ERole} from "./user/model/ERole";
 
+function initializeAppFactory(
+  authorizationService: AuthorizationService,
+  authenticationService: AuthenticationService
+): () => ERole[] {
+  return () => {
+    return authenticationService.isLoggedIn()
+      ? authorizationService.getUserRoles()
+      : []
+  };
+}
 
 @NgModule({
   declarations: [
@@ -44,7 +57,13 @@ import {ToastrModule} from "ngx-toastr";
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi: true,
-    }
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeAppFactory,
+      deps: [AuthorizationService, AuthenticationService],
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

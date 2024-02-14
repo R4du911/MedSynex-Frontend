@@ -26,7 +26,7 @@ export class AuthorizationGuard implements CanActivate {
       return this.router.createUrlTree(['home']);
     }
 
-    return true;
+    return this.authorizationService.hasRoles(route.data['roles']);
   }
 
 }
