@@ -6,8 +6,13 @@ import { NavbarComponent } from './core/layout/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LoginModule} from "./login/login.module";
+import {AuthorizationGuard} from "./utils/authorization-guard.service";
+import {HandleErrorService} from "./utils/error-handling/handle-error.service";
+import {Interceptor} from "./utils/http-interceptor";
+import {ToastrModule} from "ngx-toastr";
+
 
 @NgModule({
   declarations: [
@@ -22,9 +27,25 @@ import {LoginModule} from "./login/login.module";
     LoginModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      maxOpened: 4,
+      closeButton: true,
+      autoDismiss: true,
+    }),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
+    AuthorizationGuard,
+    HandleErrorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
