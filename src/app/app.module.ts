@@ -9,7 +9,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LoginModule} from "./login/login.module";
 import {AuthorizationGuard} from "./utils/authorization-guard.service";
-import {HandleErrorService} from "./utils/error-handling/handle-error.service";
+import {HandleErrorService} from "./utils/error-handling/service/handle-error.service";
 import {Interceptor} from "./utils/http-interceptor";
 import {ToastrModule} from "ngx-toastr";
 import {AuthorizationService} from "./core/authorization/service/authorization.service";

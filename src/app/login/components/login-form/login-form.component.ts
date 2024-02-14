@@ -5,8 +5,8 @@ import {Router} from "@angular/router";
 import {LoginService} from "../../service/login.service";
 import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
 import {LoginResponse} from "../../model/login-response";
-import {HandleErrorService} from "../../../utils/error-handling/handle-error.service";
-import {CustomErrorResponse} from "../../../utils/error-handling/custom-error-response";
+import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
+import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
 import * as CryptoJS from 'crypto-js';
 
 @Component({

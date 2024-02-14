@@ -7,8 +7,8 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { HandleErrorService } from './error-handling/handle-error.service';
-import { CustomErrorResponse } from './error-handling/custom-error-response';
+import { HandleErrorService } from './error-handling/service/handle-error.service';
+import { CustomErrorResponse } from './error-handling/model/custom-error-response';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {

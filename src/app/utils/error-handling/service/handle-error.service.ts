@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ToastrService} from "ngx-toastr";
-import {CustomErrorResponse} from "./custom-error-response";
+import {CustomErrorResponse} from "../model/custom-error-response";
 
 @Injectable({
   providedIn: 'root'
