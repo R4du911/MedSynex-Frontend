@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {LoginRequest} from "../../model/login-request";
 import {Router} from "@angular/router";
@@ -8,15 +8,18 @@ import {LoginResponse} from "../../model/login-response";
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
 import * as CryptoJS from 'crypto-js';
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnDestroy{
   loginForm: UntypedFormGroup;
   private key: string = '1234567890123456';
+
+  private _componentDestroy$ = new Subject<void>;
 
   constructor(
     private router: Router,
@@ -28,6 +31,11 @@ export class LoginFormComponent {
     this.loginForm = this.setUpForm();
   }
 
+  ngOnDestroy(): void {
+    this._componentDestroy$.next();
+    this._componentDestroy$.complete();
+  }
+
   onLoginClicked() {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
@@ -35,7 +43,9 @@ export class LoginFormComponent {
     const encryptedPassword = this.encrypt(this.key, password);
 
     const loginRequest = new LoginRequest(username, encryptedPassword);
-    this.loginService.login(loginRequest).subscribe(
+    this.loginService.login(loginRequest)
+      .pipe(takeUntil(this._componentDestroy$))
+      .subscribe(
       (loginResponse: LoginResponse) => {
         sessionStorage.setItem('token', loginResponse.accessToken);
 
