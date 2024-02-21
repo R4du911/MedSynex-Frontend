@@ -18,11 +18,19 @@ export class AuthorizationGuard implements CanActivate {
       return true;
     }
 
-    if (!this.authenticationService.isLoggedIn() && !state.url.includes('login')) {
+    if (!this.authenticationService.isLoggedIn() && state.url.includes('register')) {
+      return true;
+    }
+
+    if (!this.authenticationService.isLoggedIn() && (!state.url.includes('login') && !state.url.includes('register'))) {
       return this.router.createUrlTree(['home']);
     }
 
     if (this.authenticationService.isLoggedIn() && state.url.includes('login')) {
+      return this.router.createUrlTree(['home']);
+    }
+
+    if (this.authenticationService.isLoggedIn() && state.url.includes('register')) {
       return this.router.createUrlTree(['home']);
     }
 

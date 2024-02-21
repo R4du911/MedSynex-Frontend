@@ -20,6 +20,15 @@
         <mat-icon>login</mat-icon>
       </a>
 
+      <a
+        *ngIf="!isUserLoggedIn()"
+        routerLink="/register"
+        mat-list-item
+        matTooltip="Register"
+      >
+        <mat-icon>person_add</mat-icon>
+      </a>
+
       <span [style.padding]="'0 1rem'" *ngIf="isUserLoggedIn()">
         Hello, {{ currentUser$ | async }}</span>
     </mat-nav-list>

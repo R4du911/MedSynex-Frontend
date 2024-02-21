@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+#login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form-container {
   position: relative;
   top: 50%;
@@ -24,6 +30,30 @@ mat-card {
   margin: 0 auto;
 }
 
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 mat-card-content {
   padding: 1rem;
+}
+
+mat-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+mat-card-footer a {
+  color: #26A69A;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
 }

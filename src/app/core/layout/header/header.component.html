@@ -26,6 +26,15 @@
           <mat-icon class="navbar-icon">login</mat-icon>
         </a>
 
+        <a
+          *ngIf="!isUserLoggedIn()"
+          routerLink="/register"
+          mat-button
+          matTooltip="Register"
+        >
+          <mat-icon class="navbar-icon">person_add</mat-icon>
+        </a>
+
         <a *ngIf="isUserLoggedIn()" class="user-navbar">
           Hello, {{ currentUser$ | async }}
         </a>
