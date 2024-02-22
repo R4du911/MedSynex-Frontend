@@ -15,6 +15,7 @@ import {ToastrModule} from "ngx-toastr";
 import {AuthorizationService} from "./core/authorization/service/authorization.service";
 import {AuthenticationService} from "./core/authentication/service/authentication.service";
 import {ERole} from "./user/model/ERole";
+import {RegisterModule} from "./register/register.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -38,6 +39,7 @@ function initializeAppFactory(
     NavbarComponent,
     HttpClientModule,
     LoginModule,
+    RegisterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,

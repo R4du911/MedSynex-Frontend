@@ -1,0 +1,59 @@
+:host {
+  width: 100%;
+}
+
+.register-form-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.registerForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.registerForm * {
+  width: 100%;
+}
+
+.registerForm > button {
+  grid-column: 1 / -1;
+}
+
+mat-card {
+  width: 35%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-content {
+  padding: 1rem;
+}
+
+mat-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+mat-card-footer a {
+  color: #26A69A;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
