@@ -48,7 +48,11 @@
         <div>
           <mat-form-field>
             <mat-label for="role">Role</mat-label>
-            <input matInput id="role" type="text" formControlName="role" />
+            <mat-select formControlName="role" [compareWith]="compareObjects">
+              <mat-option *ngFor="let role of roleList" [value]="role">{{
+                  ERoleMapping[role]
+                }}</mat-option>
+            </mat-select>
             <mat-error *ngIf="registerForm.get('role')!.invalid">{{
                 getErrorMessageRole()
               }}</mat-error>

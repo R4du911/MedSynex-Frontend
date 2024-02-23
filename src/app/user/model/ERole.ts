@@ -1,3 +1,6 @@
 export enum ERole {
-  ADM = 'ADM'
+  Patient='PAT',
+  FamilyDoctor='FAM_DOC',
+  Doctor='DOC',
+  Laboratory='LAB'
 }

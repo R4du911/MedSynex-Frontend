@@ -7,6 +7,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {RouterLink} from "@angular/router";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -14,15 +16,17 @@ import {RouterLink} from "@angular/router";
   declarations: [
     RegisterFormComponent
   ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        RouterLink
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterLink,
+    MatOptionModule,
+    MatSelectModule
+  ]
 })
 export class RegisterModule { }
