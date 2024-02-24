@@ -13,8 +13,7 @@ export class HandleErrorService {
 
   public handleError(err: CustomErrorResponse) {
     if (err.errorCode !== undefined) {
-      let message = err.errorCode;
-      this.toaster.error(message, 'Error', {
+      this.toaster.error(err.errorCode, 'Error', {
         timeOut: 0,
         extendedTimeOut: 0,
       });

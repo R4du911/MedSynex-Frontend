@@ -15,6 +15,9 @@ import {RegisterService} from "../../service/register.service";
 import {ERoleMapping} from "../../../user/model/ERoleMapping";
 import * as CryptoJS from "crypto-js";
 import {ERole} from "../../../user/model/ERole";
+import {RegisterRequest} from "../../model/register-request";
+import {LoginResponse} from "../../../login/model/login-response";
+import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
 
 @Component({
   selector: 'app-register-form',
@@ -54,8 +57,24 @@ export class RegisterFormComponent implements OnDestroy {
     const username = this.registerForm.get('username')?.value;
     const email = this.registerForm.get('email')?.value;
     const password = this.registerForm.get('password')?.value;
+    const role = this.registerForm.get('role')?.value;
 
     const encryptedPassword = this.encrypt(this.key, password);
+
+    const registerRequest: RegisterRequest = new RegisterRequest(firstname, lastname, username, email, encryptedPassword, role);
+    this.registerService.register(registerRequest)
+      .pipe(takeUntil(this._componentDestroy$))
+      .subscribe(
+        (loginResponse: LoginResponse) => {
+          sessionStorage.setItem('token', loginResponse.accessToken);
+
+          this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
+          this.router.navigate(['home']);
+        },
+        (error: CustomErrorResponse) => {
+          this.handleErrorService.handleError(error);
+        }
+      );
   }
 
   private setupForm() {
