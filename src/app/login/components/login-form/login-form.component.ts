@@ -49,8 +49,18 @@ export class LoginFormComponent implements OnDestroy{
       (loginResponse: LoginResponse) => {
         sessionStorage.setItem('token', loginResponse.accessToken);
 
+        console.log(loginResponse);
+
+        this.authenticationService.firstLogin = loginResponse.firstLogin;
         this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
-        this.router.navigate(['home']);
+
+        if(this.authenticationService.firstLogin){
+          //re-route to the more information form
+        }
+        else{
+          this.router.navigate(['home']);
+        }
+
         this.handleErrorService.handleSuccess("Successfully logged in");
 
       },

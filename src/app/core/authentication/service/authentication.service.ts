@@ -12,10 +12,20 @@ export class AuthenticationService {
     this.getLoggedInUsername()
   );
 
+  private _firstLogin = false;
+
   constructor(
     private router: Router
   ) {
     this.currentUser$ = this.currentUserSubject$.asObservable();
+  }
+
+  get firstLogin() {
+    return this._firstLogin;
+  }
+
+  set firstLogin(firstLogin: boolean) {
+    this._firstLogin = firstLogin;
   }
 
   logout() {
