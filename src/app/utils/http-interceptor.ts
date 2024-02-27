@@ -17,7 +17,6 @@ import {AuthenticationService} from "../core/authentication/service/authenticati
 export class Interceptor implements HttpInterceptor {
   constructor(
     private toastrService: HandleErrorService,
-    private loginService: LoginService,
     private authenticationService: AuthenticationService
   ) {}
 
@@ -29,7 +28,7 @@ export class Interceptor implements HttpInterceptor {
       headers: req.headers.set(
         'Authorization',
         sessionStorage.getItem('token') ?? ``
-      ),
+      )
     });
 
     return next.handle(req).pipe(
@@ -48,7 +47,7 @@ export class Interceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
-    return from(this.loginService.refreshToken()).pipe(
+    return from(this.authenticationService.refreshToken()).pipe(
       switchMap((res: RefreshTokenResponse) => {
         if(sessionStorage.getItem('token')){
           sessionStorage.removeItem('token');
@@ -59,7 +58,7 @@ export class Interceptor implements HttpInterceptor {
           headers: request.headers.set(
             'Authorization',
             sessionStorage.getItem('token') ?? ``
-          ),
+          )
         });
 
         return next.handle(request).pipe(

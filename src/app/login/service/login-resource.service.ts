@@ -19,8 +19,4 @@ export class LoginResourceService {
     return this.http.post<LoginResponse>(this.url + 'login', loginRequest);
   }
 
-  refreshToken() : Observable<RefreshTokenResponse> {
-    return this.http.get<RefreshTokenResponse>(this.url + 'refreshToken');
-  }
-
 }

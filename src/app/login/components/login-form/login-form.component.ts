@@ -9,6 +9,8 @@ import {HandleErrorService} from "../../../utils/error-handling/service/handle-e
 import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
 import * as CryptoJS from 'crypto-js';
 import {Subject, takeUntil} from "rxjs";
+import {AuthorizationService} from "../../../core/authorization/service/authorization.service";
+import {ERole} from "../../../user/ERole";
 
 @Component({
   selector: 'app-login-form',
@@ -26,6 +28,7 @@ export class LoginFormComponent implements OnDestroy{
     private fb: FormBuilder,
     private loginService: LoginService,
     private authenticationService: AuthenticationService,
+    private authorizationService: AuthorizationService,
     private handleErrorService: HandleErrorService,
   ) {
     this.loginForm = this.setUpForm();
@@ -49,15 +52,13 @@ export class LoginFormComponent implements OnDestroy{
       (loginResponse: LoginResponse) => {
         sessionStorage.setItem('token', loginResponse.accessToken);
 
-        console.log(loginResponse);
-
         this.authenticationService.firstLogin = loginResponse.firstLogin;
         this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
 
         if(this.authenticationService.firstLogin){
-          //re-route to the more information form
-        }
-        else{
+          this.authorizationService.hasRoles([ERole.Laboratory])
+            .then(() => this.router.navigate(['register-laboratory']))
+        } else {
           this.router.navigate(['home']);
         }
 

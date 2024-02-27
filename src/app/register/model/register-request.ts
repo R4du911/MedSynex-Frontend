@@ -1,4 +1,4 @@
-import {ERole} from "../../user/model/ERole";
+import {ERole} from "../../user/ERole";
 
 export class RegisterRequest {
   constructor(

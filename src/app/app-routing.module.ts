@@ -4,6 +4,9 @@ import {HomeComponent} from "./home/home.component";
 import {LoginFormComponent} from "./login/components/login-form/login-form.component";
 import {AuthorizationGuard} from "./utils/authorization-guard.service";
 import {RegisterFormComponent} from "./register/components/register-form/register-form.component";
+import {
+  RegisterMoreInfoLaboratoryComponent
+} from "./register/components/register-more-info-laboratory/register-more-info-laboratory.component";
 
 const routes : Routes = [
   {
@@ -20,7 +23,13 @@ const routes : Routes = [
   {
     path: 'register',
     canActivate: [AuthorizationGuard],
-    component: RegisterFormComponent
+    component: RegisterFormComponent,
+  },
+
+  {
+    path: 'register-laboratory',
+    canActivate: [AuthorizationGuard],
+    component: RegisterMoreInfoLaboratoryComponent
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

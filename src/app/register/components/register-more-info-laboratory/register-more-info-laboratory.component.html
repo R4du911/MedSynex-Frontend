@@ -1,0 +1,33 @@
+<div class="register-laboratory-form-container">
+  <mat-card>
+    <mat-card-header>
+      <h2>We need a little bit more information in order to register you as an employee of a laboratory</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="registerLaboratoryForm" [formGroup]="registerLaboratoryForm">
+        <div>
+          <mat-form-field>
+            <mat-label for="laboratory">Laboratory</mat-label>
+            <mat-select formControlName="laboratory" [compareWith]="compareObjects">
+              <mat-option *ngFor="let laboratory of laboratoryList$ | async" [value]="laboratory">{{
+                  laboratory.name
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registerLaboratoryForm.get('laboratory')!.invalid">{{
+                getErrorMessageLaboratory()
+              }}</mat-error>
+          </mat-form-field>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!registerLaboratoryForm.valid"
+          (click)="onSubmitClicked()"
+        >
+          Submit
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

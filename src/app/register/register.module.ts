@@ -9,12 +9,14 @@ import {MatInputModule} from "@angular/material/input";
 import {RouterLink} from "@angular/router";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import { RegisterMoreInfoLaboratoryComponent } from './components/register-more-info-laboratory/register-more-info-laboratory.component';
 
 
 
 @NgModule({
   declarations: [
-    RegisterFormComponent
+    RegisterFormComponent,
+    RegisterMoreInfoLaboratoryComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import {Directive, Input, OnDestroy, TemplateRef, ViewContainerRef} from '@angular/core';
-import {ERole} from "../../../user/model/ERole";
+import {ERole} from "../../../user/ERole";
 import {Subject, takeUntil} from "rxjs";
 import {AuthorizationService} from "../service/authorization.service";
 

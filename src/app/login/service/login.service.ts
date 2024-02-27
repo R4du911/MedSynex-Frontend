@@ -18,8 +18,4 @@ export class LoginService {
     return this.loginResourceService.login(loginRequest);
   }
 
-  refreshToken() : Observable<RefreshTokenResponse> {
-    return this.loginResourceService.refreshToken();
-  }
-
 }

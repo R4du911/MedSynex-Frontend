@@ -1,9 +1,9 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/layout/header/header.component';
-import { NavbarComponent } from './core/layout/navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './core/layout/header/header.component';
+import {NavbarComponent} from './core/layout/navbar/navbar.component';
+import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -14,8 +14,9 @@ import {Interceptor} from "./utils/http-interceptor";
 import {ToastrModule} from "ngx-toastr";
 import {AuthorizationService} from "./core/authorization/service/authorization.service";
 import {AuthenticationService} from "./core/authentication/service/authentication.service";
-import {ERole} from "./user/model/ERole";
+import {ERole} from "./user/ERole";
 import {RegisterModule} from "./register/register.module";
+import {LaboratoryModule} from "./laboratory/laboratory.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -40,6 +41,7 @@ function initializeAppFactory(
     HttpClientModule,
     LoginModule,
     RegisterModule,
+    LaboratoryModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,

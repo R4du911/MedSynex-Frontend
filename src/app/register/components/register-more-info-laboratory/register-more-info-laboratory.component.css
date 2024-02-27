@@ -1,0 +1,35 @@
+:host {
+  width: 100%;
+}
+
+.register-laboratory-form-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.registerLaboratoryForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.registerLaboratoryForm * {
+  width: 100%;
+}
+
+mat-card {
+  width: 25%;
+  margin: 0 auto;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-content {
+  padding: 1rem;
+}

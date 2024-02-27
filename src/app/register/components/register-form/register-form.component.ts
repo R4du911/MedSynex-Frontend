@@ -12,12 +12,13 @@ import {Router} from "@angular/router";
 import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {RegisterService} from "../../service/register.service";
-import {ERoleMapping} from "../../../user/model/ERoleMapping";
+import {ERoleMapping} from "../../../user/ERoleMapping";
 import * as CryptoJS from "crypto-js";
-import {ERole} from "../../../user/model/ERole";
+import {ERole} from "../../../user/ERole";
 import {RegisterRequest} from "../../model/register-request";
 import {LoginResponse} from "../../../login/model/login-response";
 import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
+import {AuthorizationService} from "../../../core/authorization/service/authorization.service";
 
 @Component({
   selector: 'app-register-form',
@@ -37,6 +38,7 @@ export class RegisterFormComponent implements OnDestroy {
     private fb: FormBuilder,
     private registerService: RegisterService,
     private authenticationService: AuthenticationService,
+    private authorizationService: AuthorizationService,
     private handleErrorService: HandleErrorService
   ) {
     this.registerForm = this.setupForm();
@@ -67,9 +69,15 @@ export class RegisterFormComponent implements OnDestroy {
       .subscribe(
         (loginResponse: LoginResponse) => {
           sessionStorage.setItem('token', loginResponse.accessToken);
-
           this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
-          this.router.navigate(['home']);
+
+          if(this.authenticationService.firstLogin){
+            this.authorizationService.hasRoles([ERole.Laboratory])
+              .then(() => this.router.navigate(['register-laboratory']))
+          } else {
+            this.router.navigate(['home']);
+          }
+
         },
         (error: CustomErrorResponse) => {
           this.handleErrorService.handleError(error);
