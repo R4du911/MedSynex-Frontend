@@ -59,7 +59,7 @@ export class AuthenticationService {
   }
 
   refreshToken() : Observable<RefreshTokenResponse> {
-    return this.http.get<RefreshTokenResponse>(this.url + 'refreshToken', {withCredentials: true});
+    return this.http.get<RefreshTokenResponse>(this.url + 'refreshToken');
   }
 
 }

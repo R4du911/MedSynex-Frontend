@@ -28,7 +28,7 @@ const routes : Routes = [
 
   {
     path: 'register-laboratory',
-    canActivate: [AuthorizationGuard],
+    //canActivate: [AuthorizationGuard],
     component: RegisterMoreInfoLaboratoryComponent
   },
 

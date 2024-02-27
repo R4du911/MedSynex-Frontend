@@ -28,7 +28,8 @@ export class Interceptor implements HttpInterceptor {
       headers: req.headers.set(
         'Authorization',
         sessionStorage.getItem('token') ?? ``
-      )
+      ),
+      withCredentials: true
     });
 
     return next.handle(req).pipe(
