@@ -17,6 +17,7 @@ import {AuthenticationService} from "./core/authentication/service/authenticatio
 import {ERole} from "./user/ERole";
 import {RegisterModule} from "./register/register.module";
 import {LaboratoryModule} from "./laboratory/laboratory.module";
+import {DeactivateGuard} from "./utils/deactivate.guard";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -56,6 +57,7 @@ function initializeAppFactory(
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
     AuthorizationGuard,
+    DeactivateGuard,
     HandleErrorService,
     {
       provide: HTTP_INTERCEPTORS,

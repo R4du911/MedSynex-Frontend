@@ -7,6 +7,7 @@ import {RegisterFormComponent} from "./register/components/register-form/registe
 import {
   RegisterMoreInfoLaboratoryComponent
 } from "./register/components/register-more-info-laboratory/register-more-info-laboratory.component";
+import {DeactivateGuard} from "./utils/deactivate.guard";
 
 const routes : Routes = [
   {
@@ -28,7 +29,8 @@ const routes : Routes = [
 
   {
     path: 'register-laboratory',
-    //canActivate: [AuthorizationGuard],
+    canActivate: [AuthorizationGuard],
+    canDeactivate: [DeactivateGuard],
     component: RegisterMoreInfoLaboratoryComponent
   },
 

@@ -8,17 +8,20 @@ import {Observable, Subject, take, takeUntil} from "rxjs";
 import {Laboratory} from "../../../laboratory/model/laboratory";
 import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
 import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
+import {CanComponentDeactivate} from "../../../utils/deactivate.guard";
 
 @Component({
   selector: 'app-register-more-info-laboratory',
   templateUrl: './register-more-info-laboratory.component.html',
   styleUrls: ['./register-more-info-laboratory.component.css']
 })
-export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy{
+export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy, CanComponentDeactivate{
   registerLaboratoryForm: UntypedFormGroup;
 
   laboratoryList$: Observable<Laboratory[]> = new Observable<Laboratory[]>();
   private _componentDestroy$ = new Subject<void>;
+
+  private isFormSubmitted = false;
 
   constructor(
     private router: Router,
@@ -30,6 +33,11 @@ export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy{
   ) {
     this.registerLaboratoryForm = this.setupForm();
   }
+
+  canDeactivate(): boolean {
+    return this.isFormSubmitted || !this.authenticationService.isLoggedIn();
+  }
+
 
   ngOnInit() {
     this.laboratoryService.loadLaboratories().pipe(take(1)).subscribe();
@@ -53,8 +61,10 @@ export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy{
       this.registerService.registerInfoLaboratory(username, laboratory)
         .pipe(takeUntil(this._componentDestroy$))
         .subscribe(
-          response => {
+          () => {
             this.authenticationService.firstLogin = false;
+            this.isFormSubmitted = true;
+
             this.router.navigate(['home']);
             this.handleErrorService.handleSuccess("Successfully registered as an employee of the laboratory "
               + laboratory.name);

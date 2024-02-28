@@ -20,7 +20,7 @@ export class RegisterResourceService {
   }
 
   registerInfoLaboratory(username: string, laboratory: Laboratory) : Observable<HttpResponse<string>> {
-    return this.http.post<HttpResponse<string>>(this.url + 'register/' + username, laboratory)
+    return this.http.post<HttpResponse<string>>(this.url + 'register/laboratory/' + username, laboratory)
   }
 
 }

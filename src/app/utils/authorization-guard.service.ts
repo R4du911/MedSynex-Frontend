@@ -17,9 +17,9 @@ export class AuthorizationGuard implements CanActivate {
     const isLoggedIn = this.authenticationService.isLoggedIn();
     const isLoginOrRegisterPage = state.url.includes('login') || state.url.includes('register');
 
-    // if (isLoggedIn && state.url.includes('register-laboratory')) {
-    //   return this.authenticationService.firstLogin ? true : this.router.createUrlTree(['home']);
-    // }
+    if (isLoggedIn && state.url.includes('register-laboratory')) {
+      return this.authenticationService.firstLogin ? true : this.router.createUrlTree(['home']);
+    }
 
     if (isLoggedIn && isLoginOrRegisterPage) {
       return this.router.createUrlTree(['home']);
