@@ -69,6 +69,8 @@ export class RegisterFormComponent implements OnDestroy {
       .subscribe(
         (loginResponse: LoginResponse) => {
           sessionStorage.setItem('token', loginResponse.accessToken);
+
+          this.authenticationService.firstLogin = loginResponse.firstLogin;
           this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
 
           if(this.authenticationService.firstLogin){
