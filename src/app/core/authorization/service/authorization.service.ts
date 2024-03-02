@@ -20,8 +20,12 @@ export class AuthorizationService {
 
     if (token) {
       const decoded = jwtDecode<{ roles: string[] }>(token);
-      if (decoded.roles) {
-        const userRoles : ERole[] = decoded.roles.map(role => ERole[role as keyof typeof ERole]).filter(role => role !== undefined);
+      if (decoded) {
+        const userRoles: ERole[] = decoded.roles.map(role => {
+          const key = Object.keys(ERole).find(key => ERole[key as keyof typeof ERole] === role);
+          return key ? ERole[key as keyof typeof ERole] : undefined;
+        }).filter((role): role is ERole => role !== undefined);
+
         this._userRolesSubject.next(userRoles);
         return userRoles;
       }

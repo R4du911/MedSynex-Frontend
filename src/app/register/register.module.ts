@@ -10,13 +10,15 @@ import {RouterLink} from "@angular/router";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { RegisterMoreInfoLaboratoryComponent } from './components/register-more-info-laboratory/register-more-info-laboratory.component';
+import { RegisterMoreInfoDoctorComponent } from './components/register-more-info-doctor/register-more-info-doctor.component';
 
 
 
 @NgModule({
   declarations: [
     RegisterFormComponent,
-    RegisterMoreInfoLaboratoryComponent
+    RegisterMoreInfoLaboratoryComponent,
+    RegisterMoreInfoDoctorComponent
   ],
   imports: [
     CommonModule,

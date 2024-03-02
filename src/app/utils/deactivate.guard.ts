@@ -11,10 +11,7 @@ export interface CanComponentDeactivate {
 })
 export class DeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
   canDeactivate(component: CanComponentDeactivate): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('DeactivateGuard#canDeactivate called');
-    const result = component.canDeactivate ? component.canDeactivate() : true;
-    console.log('canDeactivate result:', result);
-    return result;
+    return component.canDeactivate ? component.canDeactivate() : true;
   }
 
 }

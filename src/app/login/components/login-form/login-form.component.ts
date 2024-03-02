@@ -56,8 +56,14 @@ export class LoginFormComponent implements OnDestroy{
         this.authenticationService.setCurrentUser(this.authenticationService.getLoggedInUsername());
 
         if(this.authenticationService.firstLogin){
-          this.authorizationService.hasRoles([ERole.Laboratory])
-            .then(() => this.router.navigate(['register-laboratory']))
+          const userRole : ERole[] = this.authorizationService.getUserRoles();
+
+          if(userRole.includes(ERole.Doctor))
+            this.router.navigate(['register-doctor'])
+
+
+          if(userRole.includes(ERole.Laboratory))
+            this.router.navigate(['register-laboratory'])
         } else {
           this.router.navigate(['home']);
         }

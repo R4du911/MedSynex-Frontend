@@ -4,6 +4,7 @@ import {RegisterRequest} from "../model/register-request";
 import {Observable} from "rxjs";
 import {LoginResponse} from "../../login/model/login-response";
 import {Laboratory} from "../../laboratory/model/laboratory";
+import {RegisterAsDoctorRequest} from "../model/register-as-doctor-request";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ export class RegisterResourceService {
 
   register(registerRequest: RegisterRequest): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(this.url + 'register', registerRequest);
+  }
+
+  registerInfoDoctor(username: string, registerAsDoctorRequest: RegisterAsDoctorRequest) : Observable<HttpResponse<string>> {
+    return this.http.post<HttpResponse<string>>(this.url + 'register/doctor/' + username, registerAsDoctorRequest)
   }
 
   registerInfoLaboratory(username: string, laboratory: Laboratory) : Observable<HttpResponse<string>> {

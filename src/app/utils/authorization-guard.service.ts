@@ -14,22 +14,23 @@ export class AuthorizationGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isLoggedIn = this.authenticationService.isLoggedIn();
-    const isLoginOrRegisterPage = state.url.includes('login') || state.url.includes('register');
-
-    if (isLoggedIn && state.url.includes('register-laboratory')) {
+    if (this.authenticationService.isLoggedIn() && state.url.includes('register-doctor')) {
       return this.authenticationService.firstLogin ? true : this.router.createUrlTree(['home']);
     }
 
-    if (isLoggedIn && isLoginOrRegisterPage) {
+    if (this.authenticationService.isLoggedIn() && state.url.includes('register-laboratory')) {
+      return this.authenticationService.firstLogin ? true : this.router.createUrlTree(['home']);
+    }
+
+    if (this.authenticationService.isLoggedIn() && state.url.includes('login') || state.url.includes('register')) {
       return this.router.createUrlTree(['home']);
     }
 
-    if (!isLoggedIn && isLoginOrRegisterPage) {
+    if (!this.authenticationService.isLoggedIn() && state.url.includes('login') || state.url.includes('register')) {
       return true;
     }
 
-    if (!isLoggedIn) {
+    if (!this.authenticationService.isLoggedIn()) {
       return this.router.createUrlTree(['home']);
     }
 

@@ -18,6 +18,8 @@ import {ERole} from "./user/ERole";
 import {RegisterModule} from "./register/register.module";
 import {LaboratoryModule} from "./laboratory/laboratory.module";
 import {DeactivateGuard} from "./utils/deactivate.guard";
+import {HospitalModule} from "./hospital/hospital.module";
+import {SpecializationModule} from "./specialization/specialization.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -43,6 +45,8 @@ function initializeAppFactory(
     LoginModule,
     RegisterModule,
     LaboratoryModule,
+    HospitalModule,
+    SpecializationModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
