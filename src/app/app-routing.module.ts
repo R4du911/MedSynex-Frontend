@@ -11,6 +11,9 @@ import {DeactivateGuard} from "./utils/deactivate.guard";
 import {
   RegisterMoreInfoDoctorComponent
 } from "./register/components/register-more-info-doctor/register-more-info-doctor.component";
+import {
+  RegisterMoreInfoFamilyDoctorComponent
+} from "./register/components/register-more-info-family-doctor/register-more-info-family-doctor.component";
 
 const routes : Routes = [
   {
@@ -28,6 +31,13 @@ const routes : Routes = [
     path: 'register',
     canActivate: [AuthorizationGuard],
     component: RegisterFormComponent,
+  },
+
+  {
+    path: 'register-family-doctor',
+    canActivate: [AuthorizationGuard],
+    canDeactivate: [DeactivateGuard],
+    component: RegisterMoreInfoFamilyDoctorComponent
   },
 
   {

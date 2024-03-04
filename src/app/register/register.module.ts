@@ -11,6 +11,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { RegisterMoreInfoLaboratoryComponent } from './components/register-more-info-laboratory/register-more-info-laboratory.component';
 import { RegisterMoreInfoDoctorComponent } from './components/register-more-info-doctor/register-more-info-doctor.component';
+import { RegisterMoreInfoFamilyDoctorComponent } from './components/register-more-info-family-doctor/register-more-info-family-doctor.component';
 
 
 
@@ -18,7 +19,8 @@ import { RegisterMoreInfoDoctorComponent } from './components/register-more-info
   declarations: [
     RegisterFormComponent,
     RegisterMoreInfoLaboratoryComponent,
-    RegisterMoreInfoDoctorComponent
+    RegisterMoreInfoDoctorComponent,
+    RegisterMoreInfoFamilyDoctorComponent
   ],
   imports: [
     CommonModule,

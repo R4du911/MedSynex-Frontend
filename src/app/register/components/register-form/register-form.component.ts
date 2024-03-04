@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -76,12 +76,14 @@ export class RegisterFormComponent implements OnDestroy {
           if(this.authenticationService.firstLogin){
             const userRole : ERole[] = this.authorizationService.getUserRoles();
 
-            if(userRole.includes(ERole.Doctor))
-              this.router.navigate(['register-doctor'])
+            if(userRole.includes(ERole.FamilyDoctor))
+              this.router.navigate(['register-family-doctor']);
 
+            if(userRole.includes(ERole.Doctor))
+              this.router.navigate(['register-doctor']);
 
             if(userRole.includes(ERole.Laboratory))
-              this.router.navigate(['register-laboratory'])
+              this.router.navigate(['register-laboratory']);
           } else {
             this.router.navigate(['home']);
           }

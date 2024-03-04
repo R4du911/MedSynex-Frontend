@@ -6,6 +6,7 @@ import {LoginResponse} from "../../login/model/login-response";
 import {Laboratory} from "../../laboratory/model/laboratory";
 import {HttpResponse} from "@angular/common/http";
 import {RegisterAsDoctorRequest} from "../model/register-as-doctor-request";
+import {Dispensary} from "../../dispensary/model/dispensary";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class RegisterService {
 
   register(registerRequest: RegisterRequest): Observable<LoginResponse> {
     return this.registerResourceService.register(registerRequest);
+  }
+
+  registerInfoFamilyDoctor(username: string, dispensary: Dispensary) : Observable<HttpResponse<string>> {
+    return this.registerResourceService.registerInfoFamilyDoctor(username, dispensary);
   }
 
   registerInfoDoctor(username: string, registerAsDoctorRequest: RegisterAsDoctorRequest) : Observable<HttpResponse<string>> {
