@@ -34,7 +34,7 @@ export class Interceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status == 403) {
+        if (error.status == 403 && this.authenticationService.isLoggedIn()) {
           return this.refreshTokenMethod(req, next);
         }
 

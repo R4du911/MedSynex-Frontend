@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {LoginFormComponent} from "./login/components/login-form/login-form.component";
@@ -14,6 +14,7 @@ import {
 import {
   RegisterMoreInfoFamilyDoctorComponent
 } from "./register/components/register-more-info-family-doctor/register-more-info-family-doctor.component";
+import {ERole} from "./user/ERole";
 
 const routes : Routes = [
   {
@@ -37,6 +38,7 @@ const routes : Routes = [
     path: 'register-family-doctor',
     canActivate: [AuthorizationGuard],
     canDeactivate: [DeactivateGuard],
+    data: {roles: [ERole.FamilyDoctor] },
     component: RegisterMoreInfoFamilyDoctorComponent
   },
 
@@ -44,6 +46,7 @@ const routes : Routes = [
     path: 'register-doctor',
     canActivate: [AuthorizationGuard],
     canDeactivate: [DeactivateGuard],
+    data: {roles: [ERole.Doctor] },
     component: RegisterMoreInfoDoctorComponent
   },
 
@@ -51,6 +54,7 @@ const routes : Routes = [
     path: 'register-laboratory',
     canActivate: [AuthorizationGuard],
     canDeactivate: [DeactivateGuard],
+    data: {roles: [ERole.Laboratory] },
     component: RegisterMoreInfoLaboratoryComponent
   },
 

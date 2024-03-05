@@ -36,6 +36,7 @@ export class AuthenticationService {
   logout() {
     sessionStorage.removeItem('token');
     this.setCurrentUser(null);
+
     this.router.navigate(['/login']);
   }
 
@@ -51,7 +52,7 @@ export class AuthenticationService {
   }
 
   isLoggedIn(): boolean {
-    return !!this.currentUserSubject$.getValue();
+    return this.currentUserSubject$.getValue() != null;
   }
 
   setCurrentUser(username: string|null): void {

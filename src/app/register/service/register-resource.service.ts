@@ -22,7 +22,7 @@ export class RegisterResourceService {
   }
 
   registerInfoFamilyDoctor(username: string, dispensary: Dispensary) : Observable<HttpResponse<string>> {
-    return this.http.post<HttpResponse<string>>(this.url + 'register/familyDoctor/' + username, dispensary);
+    return this.http.post<HttpResponse<string>>(this.url + 'register/family-doctor/' + username, dispensary);
   }
 
   registerInfoDoctor(username: string, registerAsDoctorRequest: RegisterAsDoctorRequest) : Observable<HttpResponse<string>> {
