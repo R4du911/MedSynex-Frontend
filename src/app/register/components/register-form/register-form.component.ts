@@ -66,8 +66,7 @@ export class RegisterFormComponent implements OnDestroy {
     const registerRequest: RegisterRequest = new RegisterRequest(firstname, lastname, username, email, encryptedPassword, role);
     this.registerService.register(registerRequest)
       .pipe(takeUntil(this._componentDestroy$))
-      .subscribe(
-        (loginResponse: LoginResponse) => {
+      .subscribe((loginResponse: LoginResponse) => {
           sessionStorage.setItem('token', loginResponse.accessToken);
 
           this.authenticationService.firstLogin = loginResponse.firstLogin;
@@ -75,6 +74,8 @@ export class RegisterFormComponent implements OnDestroy {
 
           if(this.authenticationService.firstLogin){
             const userRole : ERole[] = this.authorizationService.getUserRoles();
+            if(userRole.includes(ERole.Patient))
+              this.router.navigate(['register-patient']);
 
             if(userRole.includes(ERole.FamilyDoctor))
               this.router.navigate(['register-family-doctor']);
@@ -87,7 +88,6 @@ export class RegisterFormComponent implements OnDestroy {
           } else {
             this.router.navigate(['home']);
           }
-
         },
         (error: CustomErrorResponse) => {
           this.handleErrorService.handleError(error);

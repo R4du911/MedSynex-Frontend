@@ -1,0 +1,57 @@
+<div class="register-patient-form-container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Complete registration as a patient</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="registerPatientForm" [formGroup]="registerPatientForm">
+        <div>
+          <mat-form-field>
+            <mat-label for="cnp">CNP</mat-label>
+            <input matInput id="cnp" type="number" formControlName="cnp" />
+            <mat-error *ngIf="registerPatientForm.get('cnp')!.invalid">{{
+                getErrorMessageCNP()
+              }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label for="dispensary">Dispensary</mat-label>
+            <mat-select formControlName="dispensary" [compareWith]="compareDispensaries">
+              <mat-option *ngFor="let dispensary of dispensaryList$ | async" [value]="dispensary">{{
+                  dispensary.name
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registerPatientForm.get('dispensary')!.invalid">{{
+                getErrorMessageDispensary()
+              }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label for="familyDoctor">Family Doctor</mat-label>
+            <mat-select formControlName="familyDoctor" [compareWith]="compareFamilyDoctors">
+              <mat-option *ngFor="let familyDoctor of familyDoctorsFromAGivenDispensaryList$ | async" [value]="familyDoctor">
+                {{familyDoctor.lastName}}, {{familyDoctor.firstName}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="registerPatientForm.get('familyDoctor')!.invalid">{{
+                getErrorMessageFamilyDoctor()
+              }}</mat-error>
+          </mat-form-field>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!registerPatientForm.valid"
+          (click)="onSubmitClicked()"
+        >
+          Submit
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

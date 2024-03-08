@@ -48,8 +48,7 @@ export class LoginFormComponent implements OnDestroy{
     const loginRequest = new LoginRequest(username, encryptedPassword);
     this.loginService.login(loginRequest)
       .pipe(takeUntil(this._componentDestroy$))
-      .subscribe(
-      (loginResponse: LoginResponse) => {
+      .subscribe((loginResponse: LoginResponse) => {
         sessionStorage.setItem('token', loginResponse.accessToken);
 
         this.authenticationService.firstLogin = loginResponse.firstLogin;
@@ -57,6 +56,8 @@ export class LoginFormComponent implements OnDestroy{
 
         if(this.authenticationService.firstLogin){
           const userRole : ERole[] = this.authorizationService.getUserRoles();
+          if(userRole.includes(ERole.Patient))
+            this.router.navigate(['register-patient']);
 
           if(userRole.includes(ERole.FamilyDoctor))
             this.router.navigate(['register-family-doctor']);

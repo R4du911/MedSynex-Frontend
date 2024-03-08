@@ -20,6 +20,7 @@ import {LaboratoryModule} from "./laboratory/laboratory.module";
 import {DeactivateGuard} from "./utils/deactivate.guard";
 import {HospitalModule} from "./hospital/hospital.module";
 import {SpecializationModule} from "./specialization/specialization.module";
+import {FamilyDoctorModule} from "./family-doctor/family-doctor.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -44,6 +45,7 @@ function initializeAppFactory(
     HttpClientModule,
     LoginModule,
     RegisterModule,
+    FamilyDoctorModule,
     LaboratoryModule,
     HospitalModule,
     SpecializationModule,

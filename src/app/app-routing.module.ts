@@ -15,6 +15,9 @@ import {
   RegisterMoreInfoFamilyDoctorComponent
 } from "./register/components/register-more-info-family-doctor/register-more-info-family-doctor.component";
 import {ERole} from "./user/ERole";
+import {
+  RegisterMoreInfoPatientComponent
+} from "./register/components/register-more-info-patient/register-more-info-patient.component";
 
 const routes : Routes = [
   {
@@ -32,6 +35,14 @@ const routes : Routes = [
     path: 'register',
     canActivate: [AuthorizationGuard],
     component: RegisterFormComponent,
+  },
+
+  {
+    path: 'register-patient',
+    canActivate: [AuthorizationGuard],
+    canDeactivate: [DeactivateGuard],
+    data: {roles: [ERole.Patient] },
+    component: RegisterMoreInfoPatientComponent
   },
 
   {

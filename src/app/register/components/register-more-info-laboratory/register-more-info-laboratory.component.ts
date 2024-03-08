@@ -60,8 +60,7 @@ export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy, C
     if(username !== null) {
       this.registerService.registerInfoLaboratory(username, laboratory)
         .pipe(takeUntil(this._componentDestroy$))
-        .subscribe(
-          () => {
+        .subscribe(() => {
             this.authenticationService.firstLogin = false;
             this.isFormSubmitted = true;
 
@@ -73,8 +72,7 @@ export class RegisterMoreInfoLaboratoryComponent implements OnInit, OnDestroy, C
             this.handleErrorService.handleError(error);
           }
         )
-    }
-    else {
+    } else {
       this.handleErrorService.handleError({ errorCode: "INVALID_USER", message: "User is invalid" });
     }
 

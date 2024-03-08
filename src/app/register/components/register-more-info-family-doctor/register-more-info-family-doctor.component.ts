@@ -59,8 +59,7 @@ export class RegisterMoreInfoFamilyDoctorComponent implements OnInit, OnDestroy,
     if(username !== null) {
       this.registerService.registerInfoFamilyDoctor(username, dispensary)
         .pipe(takeUntil(this._componentDestroy$))
-        .subscribe(
-          () => {
+        .subscribe(() => {
             this.authenticationService.firstLogin = false;
             this.isFormSubmitted = true;
 
@@ -72,8 +71,7 @@ export class RegisterMoreInfoFamilyDoctorComponent implements OnInit, OnDestroy,
             this.handleErrorService.handleError(error);
           }
         )
-    }
-    else {
+    } else {
       this.handleErrorService.handleError({ errorCode: "INVALID_USER", message: "User is invalid" });
     }
 

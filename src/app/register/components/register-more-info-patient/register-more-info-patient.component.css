@@ -1,0 +1,35 @@
+:host {
+  width: 100%;
+}
+
+.register-patient-form-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.registerPatientForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.registerPatientForm * {
+  width: 100%;
+}
+
+mat-card {
+  width: 25%;
+  margin: 0 auto;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-content {
+  padding: 1rem;
+}

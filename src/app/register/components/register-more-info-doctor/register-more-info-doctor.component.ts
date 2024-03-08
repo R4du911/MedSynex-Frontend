@@ -73,8 +73,7 @@ export class RegisterMoreInfoDoctorComponent implements OnInit, OnDestroy, CanCo
       const registerAsDoctorRequest = new RegisterAsDoctorRequest(hospital, specialization);
       this.registerService.registerInfoDoctor(username, registerAsDoctorRequest)
         .pipe(takeUntil(this._componentDestroy$))
-        .subscribe(
-          () => {
+        .subscribe(() => {
             this.authenticationService.firstLogin = false;
             this.isFormSubmitted = true;
 
@@ -87,8 +86,7 @@ export class RegisterMoreInfoDoctorComponent implements OnInit, OnDestroy, CanCo
           }
         )
 
-    }
-    else {
+    } else {
       this.handleErrorService.handleError({ errorCode: "INVALID_USER", message: "User is invalid" });
     }
 
