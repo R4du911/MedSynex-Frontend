@@ -9,12 +9,11 @@ import {AuthenticationService} from "../../../core/authentication/service/authen
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {
   filter,
-  forkJoin,
   map,
-  Observable, of,
-  Subject, switchMap,
+  Observable,
+  Subject,
   take,
-  takeUntil, tap
+  takeUntil,
 } from "rxjs";
 import {Dispensary} from "../../../dispensary/model/dispensary";
 import {User} from "../../../user/model/user";

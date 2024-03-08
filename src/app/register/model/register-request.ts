@@ -1,4 +1,4 @@
-import {ERole} from "../../user/ERole";
+import {ERole} from "../../core/authorization/model/ERole";
 
 export class RegisterRequest {
   constructor(

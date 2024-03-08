@@ -14,7 +14,7 @@ import {Interceptor} from "./utils/http-interceptor";
 import {ToastrModule} from "ngx-toastr";
 import {AuthorizationService} from "./core/authorization/service/authorization.service";
 import {AuthenticationService} from "./core/authentication/service/authentication.service";
-import {ERole} from "./user/ERole";
+import {ERole} from "./core/authorization/model/ERole";
 import {RegisterModule} from "./register/register.module";
 import {LaboratoryModule} from "./laboratory/laboratory.module";
 import {DeactivateGuard} from "./utils/deactivate.guard";

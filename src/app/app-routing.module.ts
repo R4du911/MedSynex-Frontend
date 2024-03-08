@@ -14,7 +14,7 @@ import {
 import {
   RegisterMoreInfoFamilyDoctorComponent
 } from "./register/components/register-more-info-family-doctor/register-more-info-family-doctor.component";
-import {ERole} from "./user/ERole";
+import {ERole} from "./core/authorization/model/ERole";
 import {
   RegisterMoreInfoPatientComponent
 } from "./register/components/register-more-info-patient/register-more-info-patient.component";

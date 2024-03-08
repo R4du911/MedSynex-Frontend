@@ -10,7 +10,7 @@ import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-er
 import * as CryptoJS from 'crypto-js';
 import {Subject, takeUntil} from "rxjs";
 import {AuthorizationService} from "../../../core/authorization/service/authorization.service";
-import {ERole} from "../../../user/ERole";
+import {ERole} from "../../../core/authorization/model/ERole";
 
 @Component({
   selector: 'app-login-form',

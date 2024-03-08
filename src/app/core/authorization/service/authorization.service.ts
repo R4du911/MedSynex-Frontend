@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import jwtDecode from "jwt-decode";
-import {ERole} from "../../../user/ERole";
+import {ERole} from "../model/ERole";
 import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
