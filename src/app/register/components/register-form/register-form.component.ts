@@ -97,8 +97,8 @@ export class RegisterFormComponent implements OnDestroy {
 
   private setupForm() {
     return this.fb.group({
-      firstname: ['', [Validators.required, Validators.pattern('^[a-zA-Z][a-zA-Z]+$')]],
-      lastname: ['', [Validators.required, Validators.pattern('^[a-zA-Z][a-zA-Z]+$')]],
+      firstname: ['', [Validators.required, Validators.pattern('^[A-Z][a-z]+$')]],
+      lastname: ['', [Validators.required, Validators.pattern('^[A-Z][a-z]+$')]],
       username: ['', [Validators.required, this.noWhiteSpaceValidator(), Validators.maxLength(15)]],
       email: ['', [Validators.required, Validators.pattern(
         '^[a-zA-Z0-9]+[-]?[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+[-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z]+)+$'

@@ -6,5 +6,6 @@ export const ErrorMessageMapping: Record<string, string> = {
   ["INVALID_USER_FORMAT"]: "User has an invalid format",
   ["USERNAME_ALREADY_REGISTERED"]: "User already registered with this username",
   ["EMAIL_ALREADY_REGISTERED"]: "User already registered with this email",
-  ["INVALID_USER"]: "User is invalid"
+  ["INVALID_USER"]: "User is invalid",
+  ["PATIENT_ALREADY_REGISTERED"]: "Patient with same CNP already exists"
 };
