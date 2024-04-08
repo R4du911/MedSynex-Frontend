@@ -13,8 +13,13 @@ export class UserService {
     private userResourceService: UserResourceService
   ) { }
 
-  getUsersWhichAreRegisteredAsFamilyDoctors() : Observable<User[]> {
+  getUsersWhichAreRegisteredAsWantedRole() : Observable<User[]> {
     return this.usersRegisteredAsFamilyDoctorsList$.asObservable();
+  }
+
+  loadUsersWhichAreRegisteredAsPatients() : Observable<User[]> {
+    return this.userResourceService.getAllUsersWhichAreRegisteredAsPatients()
+      .pipe(tap((users: User[]) => this.usersRegisteredAsFamilyDoctorsList$.next(users)));
   }
 
   loadUsersWhichAreRegisteredAsFamilyDoctors() : Observable<User[]> {

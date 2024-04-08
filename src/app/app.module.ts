@@ -21,6 +21,11 @@ import {DeactivateGuard} from "./utils/deactivate.guard";
 import {HospitalModule} from "./hospital/hospital.module";
 import {SpecializationModule} from "./specialization/specialization.module";
 import {FamilyDoctorModule} from "./family-doctor/family-doctor.module";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {FamilyDoctorRequestModule} from "./family-doctor-request/family-doctor-request.module";
+import {PatientModule} from "./patient/patient.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -49,9 +54,14 @@ function initializeAppFactory(
     LaboratoryModule,
     HospitalModule,
     SpecializationModule,
+    FamilyDoctorRequestModule,
+    PatientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       preventDuplicates: true,

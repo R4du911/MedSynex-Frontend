@@ -60,7 +60,7 @@ export class RegisterMoreInfoPatientComponent implements OnInit, OnDestroy, CanC
     this.userService.loadUsersWhichAreRegisteredAsFamilyDoctors().pipe(take(1)).subscribe();
 
     this.dispensaryList$ = this.dispensaryService.getDispensaries();
-    this.usersRegisteredAsFamilyDoctorsList$ = this.userService.getUsersWhichAreRegisteredAsFamilyDoctors();
+    this.usersRegisteredAsFamilyDoctorsList$ = this.userService.getUsersWhichAreRegisteredAsWantedRole();
 
     this.dispensaryFieldIsChanged();
   }
@@ -123,15 +123,16 @@ export class RegisterMoreInfoPatientComponent implements OnInit, OnDestroy, CanC
         this.familyDoctorService.loadFamilyDoctorFromAGivenDispensary(dispensary).pipe(take(1)).subscribe();
         this.familyDoctorsFromAGivenDispensaryList$ = this.familyDoctorService.getFamilyDoctorFromAGivenDispensary();
 
-        this.familyDoctorsFromAGivenDispensaryList$.subscribe((familyDoctors: FamilyDoctor[]) => {
+        this.familyDoctorsFromAGivenDispensaryList$
+          .pipe(takeUntil(this._componentDestroy$))
+          .subscribe((familyDoctors: FamilyDoctor[]) => {
           familyDoctors.forEach((familyDoctor: FamilyDoctor) => {
-            this.getUserByFamilyNameId(familyDoctor)
+            this.getUserByFamilyDoctorId(familyDoctor)
+              .pipe(takeUntil(this._componentDestroy$))
               .subscribe((user: User) => {
-                console.log(user)
                 familyDoctor.lastName = user?.lastName;
                 familyDoctor.firstName = user?.firstName;
               });
-            console.log(familyDoctor);
           });
         });
 
@@ -139,7 +140,7 @@ export class RegisterMoreInfoPatientComponent implements OnInit, OnDestroy, CanC
       });
   }
 
-  getUserByFamilyNameId(familyDoctor: FamilyDoctor): Observable<User> {
+  getUserByFamilyDoctorId(familyDoctor: FamilyDoctor): Observable<User> {
     return this.usersRegisteredAsFamilyDoctorsList$.pipe(
       map((users: User[]) => users.find((user: User) => user.familyDoctor.id === familyDoctor.id)),
       filter((user: User | undefined): user is User => user !== undefined)

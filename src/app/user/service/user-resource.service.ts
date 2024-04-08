@@ -13,6 +13,10 @@ export class UserResourceService {
     private http: HttpClient
   ) { }
 
+  getAllUsersWhichAreRegisteredAsPatients() : Observable<User[]> {
+    return this.http.get<User[]>(this.url + '/retrieve-patients');
+  }
+
   getAllUsersWhichAreRegisteredAsFamilyDoctors() : Observable<User[]> {
     return this.http.get<User[]>(this.url + '/retrieve-family-doctors');
   }
