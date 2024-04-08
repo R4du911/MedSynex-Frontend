@@ -18,6 +18,10 @@ import {ERole} from "./core/authorization/model/ERole";
 import {
   RegisterMoreInfoPatientComponent
 } from "./register/components/register-more-info-patient/register-more-info-patient.component";
+import {
+  FdrFamilyDoctorComponent
+} from "./family-doctor-request/components/fdr-family-doctor/fdr-family-doctor.component";
+import {FdrPatientComponent} from "./family-doctor-request/components/fdr-patient/fdr-patient.component";
 
 const routes : Routes = [
   {
@@ -67,6 +71,20 @@ const routes : Routes = [
     canDeactivate: [DeactivateGuard],
     data: {roles: [ERole.Laboratory] },
     component: RegisterMoreInfoLaboratoryComponent
+  },
+
+  {
+    path: 'family-doctor-request/family-doctor',
+    canActivate: [AuthorizationGuard],
+    data: {roles: [ERole.FamilyDoctor] },
+    component: FdrFamilyDoctorComponent
+  },
+
+  {
+    path: 'family-doctor-request/patient',
+    canActivate: [AuthorizationGuard],
+    data: {roles: [ERole.Patient] },
+    component: FdrPatientComponent
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

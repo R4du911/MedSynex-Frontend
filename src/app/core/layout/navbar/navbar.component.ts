@@ -10,6 +10,9 @@ import {AuthenticationService} from "../../authentication/service/authentication
 import {Observable} from "rxjs";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {ERole} from "../../authorization/model/ERole";
+import {HasRolesDirective} from "../../authorization/directives/has-roles.directive";
+import {AuthorizationService} from "../../authorization/service/authorization.service";
 
 
 @Component({
@@ -26,7 +29,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     HeaderComponent,
     RouterModule,
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HasRolesDirective
   ],
   standalone: true
 })
@@ -34,7 +38,8 @@ export class NavbarComponent {
   currentUser$: Observable<string | null>;
 
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private authorizationService: AuthorizationService
   ) {
     this.currentUser$ = this.authenticationService.currentUser$;
   }
@@ -45,6 +50,8 @@ export class NavbarComponent {
 
   logout(): void {
     this.authenticationService.logout();
+    this.authorizationService.logout();
   }
 
+  protected readonly ERole = ERole;
 }

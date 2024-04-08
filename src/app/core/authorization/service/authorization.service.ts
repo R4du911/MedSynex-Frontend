@@ -34,6 +34,10 @@ export class AuthorizationService {
     return [];
   }
 
+  logout() {
+    this._userRolesSubject.next([]);
+  }
+
   hasRoles(targetRoles: ERole[]) : Promise<boolean> {
     const userRoles : ERole[] = this._userRolesSubject
       .getValue();

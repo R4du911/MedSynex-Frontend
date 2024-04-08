@@ -8,6 +8,22 @@
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs fxHide.sm>
     <ul fxLayout fxLayoutGap="1rem" class="navigation-items">
       <li>
+        <a *hasRoles="[ERole.FamilyDoctor]"
+           routerLink="/family-doctor-request/family-doctor"
+           mat-button
+           matTooltip="Requests"
+        >
+          Requests
+        </a>
+
+        <a *hasRoles="[ERole.Patient]"
+           routerLink="/family-doctor-request/patient"
+           mat-button
+           matTooltip="Requests"
+        >
+          My Requests
+        </a>
+
         <a
           *ngIf="isUserLoggedIn()"
           mat-button

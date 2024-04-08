@@ -8,6 +8,10 @@ import {RouterModule} from "@angular/router";
 import {AuthenticationService} from "../../authentication/service/authentication.service";
 import {Observable} from "rxjs";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {ERole} from "../../authorization/model/ERole";
+import {HasRolesDirective} from "../../authorization/directives/has-roles.directive";
+import {MatListModule} from "@angular/material/list";
+import {AuthorizationService} from "../../authorization/service/authorization.service";
 
 @Component({
   selector: 'app-header',
@@ -21,6 +25,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatTooltipModule,
     RouterModule,
     FlexLayoutModule,
+    HasRolesDirective,
+    MatListModule,
   ],
   standalone: true
 })
@@ -30,7 +36,8 @@ export class HeaderComponent {
   currentUser$: Observable<string | null>;
 
   constructor(
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private authorizationService: AuthorizationService
   ) {
     this.currentUser$ = this.authenticationService.currentUser$;
   }
@@ -41,10 +48,12 @@ export class HeaderComponent {
 
   logout(): void {
     this.authenticationService.logout();
+    this.authorizationService.logout();
   }
 
   onSidenavToggle() {
     this.sideNavToggle.next();
   }
 
+    protected readonly ERole = ERole;
 }

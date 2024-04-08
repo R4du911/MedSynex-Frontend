@@ -2,6 +2,23 @@
   <mat-sidenav #sidenav>
     <mat-nav-list>
       <a (click)="sidenav.toggle()" mat-list-item>Close</a>
+
+      <a *hasRoles="[ERole.FamilyDoctor]"
+         routerLink="/family-doctor-request/family-doctor"
+         mat-list-item
+         matTooltip="Requests"
+      >
+          Requests
+      </a>
+
+      <a *hasRoles="[ERole.Patient]"
+         routerLink="/family-doctor-request/patient"
+         mat-list-item
+         matTooltip="Requests"
+      >
+        My Requests
+      </a>
+
       <a
         *ngIf="isUserLoggedIn()"
         mat-list-item
