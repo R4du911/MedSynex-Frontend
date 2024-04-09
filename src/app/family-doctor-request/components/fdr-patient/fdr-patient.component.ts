@@ -12,6 +12,8 @@ import {HandleErrorService} from "../../../utils/error-handling/service/handle-e
 import {ERole} from "../../../core/authorization/model/ERole";
 import {FamilyDoctor} from "../../../family-doctor/model/family-doctor";
 import {PatientService} from "../../../patient/service/patient.service";
+import {MatDialog} from "@angular/material/dialog";
+import {FdrMakeRequestDialogComponent} from "../fdr-make-request-dialog/fdr-make-request-dialog.component";
 
 @Component({
   selector: 'app-fdr-patient',
@@ -30,6 +32,7 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
   public registeredFamilyDoctor: FamilyDoctor | null = null;
 
   constructor(
+    private dialog: MatDialog,
     private familyDoctorRequestService: FamilyDoctorRequestService,
     private patientService: PatientService,
     private userService: UserService,
@@ -102,6 +105,9 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
   }
 
   onMakeRequest() {
-
+    this.dialog.open(FdrMakeRequestDialogComponent,
+      { data: !!this.authenticationService.getLoggedInUsername()
+          ? this.authenticationService.getLoggedInUsername() : ''
+      });
   }
 }

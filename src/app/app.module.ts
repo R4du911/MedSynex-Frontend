@@ -26,6 +26,7 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {FamilyDoctorRequestModule} from "./family-doctor-request/family-doctor-request.module";
 import {PatientModule} from "./patient/patient.module";
+import {MatDialogModule} from "@angular/material/dialog";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -61,6 +62,7 @@ function initializeAppFactory(
     BrowserModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule,
     MatPaginatorModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',

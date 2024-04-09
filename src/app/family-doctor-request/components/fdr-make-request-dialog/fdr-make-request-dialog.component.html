@@ -1,0 +1,53 @@
+<div class="dialog-header">
+  <span>Make a family doctor request</span>
+  <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="make-request-container">
+    <form class="make-request-form" [formGroup]="makeRequestForm">
+      <div>
+        <mat-form-field>
+          <mat-label for="dispensary">Dispensary</mat-label>
+          <mat-select formControlName="dispensary" [compareWith]="compareDispensaries">
+            <mat-option *ngFor="let dispensary of dispensaryList$ | async" [value]="dispensary">{{
+                dispensary.name
+              }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="makeRequestForm.get('dispensary')!.invalid">{{
+              getErrorMessageDispensary()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label for="familyDoctor">Family Doctor</mat-label>
+          <mat-select formControlName="familyDoctor" [compareWith]="compareFamilyDoctors">
+            <mat-option *ngFor="let familyDoctor of familyDoctorsFromAGivenDispensaryList$ | async" [value]="familyDoctor">
+              {{familyDoctor.lastName}}, {{familyDoctor.firstName}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="makeRequestForm.get('familyDoctor')!.invalid">{{
+              getErrorMessageFamilyDoctor()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="loading-modal-footer">
+    <button
+      class="formButton"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="makeRequestForm.invalid"
+      (click)="onSave()"
+    >
+      Submit
+    </button>
+  </div>
+</mat-dialog-actions>
