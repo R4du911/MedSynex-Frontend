@@ -22,6 +22,7 @@ import {
   FdrFamilyDoctorComponent
 } from "./family-doctor-request/components/fdr-family-doctor/fdr-family-doctor.component";
 import {FdrPatientComponent} from "./family-doctor-request/components/fdr-patient/fdr-patient.component";
+import {FdPatientsListComponent} from "./family-doctor/components/fd-patients-list/fd-patients-list.component";
 
 const routes : Routes = [
   {
@@ -85,6 +86,13 @@ const routes : Routes = [
     canActivate: [AuthorizationGuard],
     data: {roles: [ERole.Patient] },
     component: FdrPatientComponent
+  },
+
+  {
+    path: 'my-patients',
+    canActivate: [AuthorizationGuard],
+    data: {roles: [ERole.FamilyDoctor] },
+    component: FdPatientsListComponent
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

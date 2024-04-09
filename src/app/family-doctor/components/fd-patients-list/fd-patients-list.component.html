@@ -1,0 +1,76 @@
+<div class="table-container">
+  <h1 id="title">Registered patients</h1>
+
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="CNP">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="cnp">
+          CNP
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.cnp }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Lastname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="lastName">
+          Last Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Firstname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="firstName">
+          First Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions" [sticky]="true">
+        <th mat-header-cell *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            matTooltip="More Info"
+            (click)="onMoreInfo(element)"
+          >
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr class="empty-table" *matNoDataRow>
+        <td [colSpan]="4">No registered patients!</td>
+      </tr>
+      <tr
+        mat-header-row
+        *matHeaderRowDef="
+          [
+            'CNP',
+            'Lastname',
+            'Firstname',
+            'Actions'
+          ];
+          sticky: true
+        "
+      ></tr>
+      <tr
+        mat-row
+        *matRowDef="
+          let row;
+          columns: [
+            'CNP',
+            'Lastname',
+            'Firstname',
+            'Actions'
+          ];
+        "
+      ></tr>
+    </table>
+    <mat-paginator
+      style="position: sticky; bottom: 0"
+      [showFirstLastButtons]=true
+      [pageSizeOptions]="[5, 10, 15]"
+    ></mat-paginator>
+  </div>
+</div>

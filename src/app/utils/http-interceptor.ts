@@ -12,12 +12,14 @@ import { CustomErrorResponse } from './error-handling/model/custom-error-respons
 import {LoginService} from "../login/service/login.service";
 import {RefreshTokenResponse} from "../login/model/refresh-token-response";
 import {AuthenticationService} from "../core/authentication/service/authentication.service";
+import {AuthorizationService} from "../core/authorization/service/authorization.service";
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
   constructor(
     private toastrService: HandleErrorService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private authorizationService: AuthorizationService
   ) {}
 
   intercept(
@@ -66,6 +68,7 @@ export class Interceptor implements HttpInterceptor {
           catchError((error: HttpErrorResponse) => {
             if (error.status == 403) {
               this.authenticationService.logout()
+              this.authorizationService.logout();
               this.toastrService.handleInformative("Session expired");
             }
 

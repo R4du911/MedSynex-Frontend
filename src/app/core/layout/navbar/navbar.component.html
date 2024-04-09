@@ -4,6 +4,14 @@
       <a (click)="sidenav.toggle()" mat-list-item>Close</a>
 
       <a *hasRoles="[ERole.FamilyDoctor]"
+         routerLink="/my-patients"
+         mat-list-item
+         matTooltip="Patients"
+      >
+        Patients
+      </a>
+
+      <a *hasRoles="[ERole.FamilyDoctor]"
          routerLink="/family-doctor-request/family-doctor"
          mat-list-item
          matTooltip="Requests"
