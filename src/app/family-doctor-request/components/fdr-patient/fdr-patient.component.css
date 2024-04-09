@@ -41,3 +41,7 @@ div.table-container {
 .bolded-text {
   font-weight: bold;
 }
+
+.button-container {
+  justify-self: flex-end !important;
+}

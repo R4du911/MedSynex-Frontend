@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {BehaviorSubject, filter, map, Observable, Subject, take, takeUntil} from "rxjs";
+import {filter, map, Observable, Subject, take, takeUntil} from "rxjs";
 import {FamilyDoctorRequest} from "../../model/family-doctor-request";
 import {User} from "../../../user/model/user";
 import {MatTableDataSource} from "@angular/material/table";
@@ -64,7 +64,7 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
 
   ngOnInit(): void {
     const userRole : ERole[] = this.authorizationService.getUserRoles();
-    const username = this.authenticationService.getLoggedInUsername();
+    const username: string | null = this.authenticationService.getLoggedInUsername();
 
     if(username !== null) {
       if(userRole.includes(ERole.Patient)) {
@@ -96,9 +96,12 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
 
   getUserByFamilyDoctorId(familyDoctor: FamilyDoctor): Observable<User> {
     return this.usersRegisteredAsFamilyDoctorsList$.pipe(
-      map((users: User[]) => users.find((user: User) => user.familyDoctor.id === familyDoctor.id)),
+      map((users: User[]) => users.find((user: User) => user?.familyDoctor?.id === familyDoctor?.id)),
       filter((user: User | undefined): user is User => user !== undefined)
     );
   }
 
+  onMakeRequest() {
+
+  }
 }

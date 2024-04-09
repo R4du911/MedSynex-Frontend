@@ -142,7 +142,7 @@ export class RegisterMoreInfoPatientComponent implements OnInit, OnDestroy, CanC
 
   getUserByFamilyDoctorId(familyDoctor: FamilyDoctor): Observable<User> {
     return this.usersRegisteredAsFamilyDoctorsList$.pipe(
-      map((users: User[]) => users.find((user: User) => user.familyDoctor.id === familyDoctor.id)),
+      map((users: User[]) => users.find((user: User) => user?.familyDoctor?.id === familyDoctor?.id)),
       filter((user: User | undefined): user is User => user !== undefined)
     );
   }
