@@ -82,7 +82,7 @@ export class FdrFamilyDoctorComponent implements OnInit, OnDestroy, AfterContent
   getUserByPatientId(patient: Patient): Observable<User> {
     return this.usersRegisteredAsPatientsList$.pipe(
       map((users: User[]) => users.find((user: User) => user?.patient?.cnp === patient?.cnp)),
-      filter((user: User | undefined): user is User => user !== undefined)
+      filter((user: User | undefined): user is User => user !== undefined && user !== null)
     );
   }
 

@@ -71,7 +71,7 @@ export class RegisterMoreInfoPatientComponent implements OnInit, OnDestroy, CanC
   }
 
   compareFamilyDoctors(obj1: FamilyDoctor, obj2: FamilyDoctor) {
-    return obj1.id === obj2.id && obj1.dispensary === obj2.dispensary && obj1.nrPatients === obj2.nrPatients;
+    return obj1?.id === obj2?.id && obj1.dispensary === obj2.dispensary && obj1.nrPatients === obj2.nrPatients;
   }
 
   compareDispensaries(obj1: Dispensary, obj2: Dispensary) {

@@ -100,13 +100,13 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
   getUserByFamilyDoctorId(familyDoctor: FamilyDoctor): Observable<User> {
     return this.usersRegisteredAsFamilyDoctorsList$.pipe(
       map((users: User[]) => users.find((user: User) => user?.familyDoctor?.id === familyDoctor?.id)),
-      filter((user: User | undefined): user is User => user !== undefined)
+      filter((user: User | undefined): user is User => user !== undefined && user !== null)
     );
   }
 
   onMakeRequest() {
     this.dialog.open(FdrMakeRequestDialogComponent,
-      { data: !!this.authenticationService.getLoggedInUsername()
+      { data: this.authenticationService.getLoggedInUsername()
           ? this.authenticationService.getLoggedInUsername() : ''
       });
   }

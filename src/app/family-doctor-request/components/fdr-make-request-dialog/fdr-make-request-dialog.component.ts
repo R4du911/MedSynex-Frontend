@@ -62,7 +62,7 @@ export class FdrMakeRequestDialogComponent implements OnInit, OnDestroy{
   }
 
   compareFamilyDoctors(obj1: FamilyDoctor, obj2: FamilyDoctor) {
-    return obj1.id === obj2.id && obj1.dispensary === obj2.dispensary && obj1.nrPatients === obj2.nrPatients;
+    return obj1?.id === obj2?.id && obj1.dispensary === obj2.dispensary && obj1.nrPatients === obj2.nrPatients;
   }
 
   compareDispensaries(obj1: Dispensary, obj2: Dispensary) {
@@ -98,7 +98,7 @@ export class FdrMakeRequestDialogComponent implements OnInit, OnDestroy{
   getUserByFamilyDoctorId(familyDoctor: FamilyDoctor): Observable<User> {
     return this.usersRegisteredAsFamilyDoctorsList$.pipe(
       map((users: User[]) => users.find((user: User) => user?.familyDoctor?.id === familyDoctor?.id)),
-      filter((user: User | undefined): user is User => user !== undefined)
+      filter((user: User | undefined): user is User => user !== undefined && user !== null)
     );
   }
 
