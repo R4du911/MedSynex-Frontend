@@ -7,5 +7,6 @@ export const ErrorMessageMapping: Record<string, string> = {
   ["USERNAME_ALREADY_REGISTERED"]: "User already registered with this username",
   ["EMAIL_ALREADY_REGISTERED"]: "User already registered with this email",
   ["INVALID_USER"]: "User is invalid",
-  ["PATIENT_ALREADY_REGISTERED"]: "Patient with same CNP already exists"
+  ["PATIENT_ALREADY_REGISTERED"]: "Patient with same CNP already exists",
+  ["FAMILY_DOCTOR_HAS_MAX_PATIENTS"]: "Selected Family doctor already has maximum number of patients"
 };
