@@ -1,5 +1,9 @@
 <div class="family-doctor-container">
-  <div>Your family doctor:</div>
+  <div *ngIf="registeredFamilyDoctor !== null">
+    <span class="bolded-text">Your family doctor: </span> {{registeredFamilyDoctor.lastName}} {{registeredFamilyDoctor.firstName}},
+    {{registeredFamilyDoctor.dispensary.name}}</div>
+  <div *ngIf="registeredFamilyDoctor === null">
+    <span class="bolded-text">Your family doctor: </span> No assigned family doctor</div>
 </div>
 
 <div class="table-container">

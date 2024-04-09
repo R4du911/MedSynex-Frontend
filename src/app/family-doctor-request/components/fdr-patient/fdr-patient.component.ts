@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {filter, map, Observable, Subject, take, takeUntil} from "rxjs";
+import {BehaviorSubject, filter, map, Observable, Subject, take, takeUntil} from "rxjs";
 import {FamilyDoctorRequest} from "../../model/family-doctor-request";
 import {User} from "../../../user/model/user";
 import {MatTableDataSource} from "@angular/material/table";
@@ -11,6 +11,7 @@ import {AuthorizationService} from "../../../core/authorization/service/authoriz
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {ERole} from "../../../core/authorization/model/ERole";
 import {FamilyDoctor} from "../../../family-doctor/model/family-doctor";
+import {PatientService} from "../../../patient/service/patient.service";
 
 @Component({
   selector: 'app-fdr-patient',
@@ -26,8 +27,11 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  public registeredFamilyDoctor: FamilyDoctor | null = null;
+
   constructor(
     private familyDoctorRequestService: FamilyDoctorRequestService,
+    private patientService: PatientService,
     private userService: UserService,
     private authenticationService: AuthenticationService,
     private authorizationService: AuthorizationService,
@@ -69,6 +73,18 @@ export class FdrPatientComponent implements OnInit, OnDestroy, AfterContentInit{
 
         this.userService.loadUsersWhichAreRegisteredAsFamilyDoctors()
           .pipe(take(1)).subscribe();
+
+        this.patientService.getRegisteredFamilyDoctorOfGivenPatient(username).pipe(take(1))
+          .subscribe((familyDoctor: FamilyDoctor) => {
+            this.getUserByFamilyDoctorId(familyDoctor)
+              .pipe(take(1))
+              .subscribe((user : User) => {
+                familyDoctor.lastName = user.lastName;
+                familyDoctor.firstName = user.firstName;
+              });
+
+            this.registeredFamilyDoctor = familyDoctor
+          });
       }
 
       this.familyDoctorRequestList$ = this.familyDoctorRequestService.getFamilyDoctorRequests();

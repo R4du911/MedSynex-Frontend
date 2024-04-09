@@ -37,3 +37,7 @@ div.table-container {
   font-size: 1.5rem;
   margin-bottom: 2.5rem;
 }
+
+.bolded-text {
+  font-weight: bold;
+}
