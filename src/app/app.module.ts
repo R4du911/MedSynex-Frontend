@@ -28,6 +28,7 @@ import {FamilyDoctorRequestModule} from "./family-doctor-request/family-doctor-r
 import {PatientModule} from "./patient/patient.module";
 import {MatDialogModule} from "@angular/material/dialog";
 import {NgOptimizedImage} from "@angular/common";
+import {MatCardModule} from "@angular/material/card";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -73,6 +74,7 @@ function initializeAppFactory(
             autoDismiss: true,
         }),
         NgOptimizedImage,
+        MatCardModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
