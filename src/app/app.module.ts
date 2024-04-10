@@ -27,6 +27,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {FamilyDoctorRequestModule} from "./family-doctor-request/family-doctor-request.module";
 import {PatientModule} from "./patient/patient.module";
 import {MatDialogModule} from "@angular/material/dialog";
+import {NgOptimizedImage} from "@angular/common";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -44,34 +45,35 @@ function initializeAppFactory(
     AppComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    HeaderComponent,
-    NavbarComponent,
-    HttpClientModule,
-    LoginModule,
-    RegisterModule,
-    FamilyDoctorModule,
-    LaboratoryModule,
-    HospitalModule,
-    SpecializationModule,
-    FamilyDoctorRequestModule,
-    PatientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    MatTableModule,
-    MatSortModule,
-    MatDialogModule,
-    MatPaginatorModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-      maxOpened: 4,
-      closeButton: true,
-      autoDismiss: true,
-    }),
-  ],
+    imports: [
+        BrowserModule,
+        HeaderComponent,
+        NavbarComponent,
+        HttpClientModule,
+        LoginModule,
+        RegisterModule,
+        FamilyDoctorModule,
+        LaboratoryModule,
+        HospitalModule,
+        SpecializationModule,
+        FamilyDoctorRequestModule,
+        PatientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        MatTableModule,
+        MatSortModule,
+        MatDialogModule,
+        MatPaginatorModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-top-right',
+            preventDuplicates: true,
+            maxOpened: 4,
+            closeButton: true,
+            autoDismiss: true,
+        }),
+        NgOptimizedImage,
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
     AuthorizationGuard,
