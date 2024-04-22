@@ -97,7 +97,7 @@ const routes : Routes = [
   },
 
   {
-    path: 'records',
+    path: 'records/:cnp',
     canActivate: [AuthorizationGuard],
     data: {roles: [ERole.Patient, ERole.FamilyDoctor, ERole.Doctor] },
     component: ConsultationListComponent

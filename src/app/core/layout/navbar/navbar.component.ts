@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
@@ -13,6 +13,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ERole} from "../../authorization/model/ERole";
 import {HasRolesDirective} from "../../authorization/directives/has-roles.directive";
 import {AuthorizationService} from "../../authorization/service/authorization.service";
+import {UserService} from "../../../user/service/user.service";
+import {User} from "../../../user/model/user";
 
 
 
@@ -35,13 +37,25 @@ import {AuthorizationService} from "../../authorization/service/authorization.se
   ],
   standalone: true
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
   currentUser$: Observable<string | null>;
+  userCNP: number | undefined;
+
   constructor(
     private authenticationService: AuthenticationService,
-    private authorizationService: AuthorizationService
+    private authorizationService: AuthorizationService,
+    private userService: UserService
   ) {
     this.currentUser$ = this.authenticationService.currentUser$;
+  }
+
+  ngOnInit(): void {
+    this.currentUser$.subscribe((username: string | null) => {
+      if(username)
+        this.userService.loadCurrentUserDetails(username).subscribe((user: User) => {
+          this.userCNP = user.patient?.cnp
+        });
+    });
   }
 
   isUserLoggedIn(): boolean {

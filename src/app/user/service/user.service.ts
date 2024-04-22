@@ -26,4 +26,8 @@ export class UserService {
     return this.userResourceService.getAllUsersWhichAreRegisteredAsFamilyDoctors()
       .pipe(tap((users: User[]) => this.usersRegisteredAsFamilyDoctorsList$.next(users)));
   }
+
+  loadCurrentUserDetails(username: string) : Observable<User> {
+    return this.userResourceService.getCurrentUserDetails(username);
+  }
 }

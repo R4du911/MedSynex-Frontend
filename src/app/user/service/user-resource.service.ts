@@ -20,4 +20,8 @@ export class UserResourceService {
   getAllUsersWhichAreRegisteredAsFamilyDoctors() : Observable<User[]> {
     return this.http.get<User[]>(this.url + '/retrieve-family-doctors');
   }
+
+  getCurrentUserDetails(username: string): Observable<User> {
+    return this.http.get<User>(this.url + '/current-user/' + username);
+  }
 }

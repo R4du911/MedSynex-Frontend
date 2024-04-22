@@ -9,7 +9,7 @@
     <ul fxLayout fxLayoutGap="1rem" class="navigation-items">
       <li>
         <a *hasRoles="[ERole.Patient]"
-           routerLink="/records"
+           [routerLink]="['/records', userCNP]"
            mat-button
            matTooltip="Records"
         >

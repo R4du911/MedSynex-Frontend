@@ -90,6 +90,6 @@ export class FdPatientsListComponent implements OnInit, OnDestroy, AfterContentI
   }
 
   onMoreInfo(patient: Patient) {
-    this.router.navigate(['records']);
+    this.router.navigate(['records', patient.cnp]);
   }
 }
