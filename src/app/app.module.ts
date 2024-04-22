@@ -29,6 +29,7 @@ import {PatientModule} from "./patient/patient.module";
 import {MatDialogModule} from "@angular/material/dialog";
 import {NgOptimizedImage} from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
+import {ConsultationModule} from "./consultation/consultation.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -59,6 +60,7 @@ function initializeAppFactory(
         SpecializationModule,
         FamilyDoctorRequestModule,
         PatientModule,
+        ConsultationModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,

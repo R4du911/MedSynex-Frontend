@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
@@ -13,6 +13,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ERole} from "../../authorization/model/ERole";
 import {HasRolesDirective} from "../../authorization/directives/has-roles.directive";
 import {AuthorizationService} from "../../authorization/service/authorization.service";
+
 
 
 @Component({
@@ -36,7 +37,6 @@ import {AuthorizationService} from "../../authorization/service/authorization.se
 })
 export class NavbarComponent {
   currentUser$: Observable<string | null>;
-
   constructor(
     private authenticationService: AuthenticationService,
     private authorizationService: AuthorizationService

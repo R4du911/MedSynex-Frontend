@@ -11,6 +11,7 @@ import {AuthenticationService} from "../../../core/authentication/service/authen
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {FamilyDoctorService} from "../../service/family-doctor.service";
 import {UserService} from "../../../user/service/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-fd-patients-list',
@@ -28,6 +29,7 @@ export class FdPatientsListComponent implements OnInit, OnDestroy, AfterContentI
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    private router: Router,
     private familyDoctorService: FamilyDoctorService,
     private userService: UserService,
     private authorizationService: AuthorizationService,
@@ -87,8 +89,7 @@ export class FdPatientsListComponent implements OnInit, OnDestroy, AfterContentI
     );
   }
 
-
   onMoreInfo(patient: Patient) {
-
+    this.router.navigate(['records']);
   }
 }

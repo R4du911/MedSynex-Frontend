@@ -3,6 +3,14 @@
     <mat-nav-list>
       <a (click)="sidenav.toggle()" mat-list-item>Close</a>
 
+      <a *hasRoles="[ERole.Patient]"
+         routerLink="/records"
+         mat-list-item
+         matTooltip="Records"
+      >
+        Records
+      </a>
+
       <a *hasRoles="[ERole.FamilyDoctor]"
          routerLink="/my-patients"
          mat-list-item

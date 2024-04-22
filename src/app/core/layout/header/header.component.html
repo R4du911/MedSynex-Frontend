@@ -8,6 +8,14 @@
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs fxHide.sm>
     <ul fxLayout fxLayoutGap="1rem" class="navigation-items">
       <li>
+        <a *hasRoles="[ERole.Patient]"
+           routerLink="/records"
+           mat-button
+           matTooltip="Records"
+        >
+          Records
+        </a>
+
         <a *hasRoles="[ERole.FamilyDoctor]"
            routerLink="/my-patients"
            mat-button
