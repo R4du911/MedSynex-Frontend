@@ -5,9 +5,11 @@ import {MatPaginator} from "@angular/material/paginator";
 import {Consultation} from "../../model/consultation";
 import {MatSort} from "@angular/material/sort";
 import {ConsultationService} from "../../service/consultation.service";
-import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
 import {ERole} from "../../../core/authorization/model/ERole";
+import {MatDialog} from "@angular/material/dialog";
+import {ConsultationMoreInfoComponent} from "../consultation-more-info/consultation-more-info.component";
+import {ConsultationEditDialogComponent} from "../consultation-edit-dialog/consultation-edit-dialog.component";
 
 @Component({
   selector: 'app-consultation-list',
@@ -29,7 +31,7 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
   constructor(
     private authenticationService: AuthenticationService,
     private consultationService: ConsultationService,
-    private handleErrorService: HandleErrorService
+    private dialog: MatDialog
   ) {
     this.username = this.authenticationService.getLoggedInUsername();
   }
@@ -57,15 +59,21 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
   }
 
   onEdit(consultation: Consultation) {
-
+    this.dialog.open(ConsultationEditDialogComponent, {
+      data: consultation
+    });
   }
 
   onMoreInfo(consultation: Consultation) {
-
+    this.dialog.open(ConsultationMoreInfoComponent, {
+      data: consultation
+    });
   }
 
   onAddConsultation() {
-
+    this.dialog.open(ConsultationEditDialogComponent, {
+      data: null
+    });
   }
 
   protected readonly ERole = ERole;

@@ -9,13 +9,15 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {HasRolesDirective} from "../core/authorization/directives/has-roles.directive";
+import { ConsultationEditDialogComponent } from './components/consultation-edit-dialog/consultation-edit-dialog.component';
 
 
 
 @NgModule({
     declarations: [
         ConsultationListComponent,
-        ConsultationMoreInfoComponent
+        ConsultationMoreInfoComponent,
+        ConsultationEditDialogComponent
     ],
     exports: [
         ConsultationListComponent
