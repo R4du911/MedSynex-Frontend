@@ -1,1 +1,32 @@
-<p>record-display works!</p>
+<mat-card>
+  <mat-card-header>
+    <div class="button-group">
+      <button
+        mat-button
+        [class.highlighted]="activeComponent === 'consultation'"
+        (click)="setActiveComponent('consultation')">
+        Consultations
+      </button>
+      <button
+        mat-button
+        [class.highlighted]="activeComponent === 'laboratory-analysis'"
+        (click)="setActiveComponent('laboratory-analysis')">
+        Laboratory Analyses
+      </button>
+      <button
+        mat-button
+        [class.highlighted]="activeComponent === 'diabetes-chart'"
+        (click)="setActiveComponent('diabetes-chart')">
+        Diabetes Statistics
+      </button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ng-container [ngSwitch]="activeComponent">
+      <app-consultation-list *ngSwitchCase="'consultation'" [patientCNP]="patientCNP"></app-consultation-list>
+      <app-laboratory-analysis-list *ngSwitchCase="'laboratory-analysis'"></app-laboratory-analysis-list>
+      <app-diabetes-chart *ngSwitchCase="'diabetes-chart'"></app-diabetes-chart>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

@@ -10,6 +10,10 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {ConsultationModule} from "../consultation/consultation.module";
+import {LaboratoryAnalysisModule} from "../laboratory-analysis/laboratory-analysis.module";
+import {DiabetesStatisticModule} from "../diabetes-statistic/diabetes-statistic.module";
+import {MatCardModule} from "@angular/material/card";
 
 
 
@@ -27,7 +31,11 @@ import {MatInputModule} from "@angular/material/input";
     MatOptionModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    ConsultationModule,
+    LaboratoryAnalysisModule,
+    DiabetesStatisticModule,
+    MatCardModule
   ]
 })
 export class RecordModule { }

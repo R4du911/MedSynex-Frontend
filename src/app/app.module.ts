@@ -31,6 +31,8 @@ import {NgOptimizedImage} from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
 import {ConsultationModule} from "./consultation/consultation.module";
 import {RecordModule} from "./record/record.module";
+import {LaboratoryAnalysisModule} from "./laboratory-analysis/laboratory-analysis.module";
+import {DiabetesStatisticModule} from "./diabetes-statistic/diabetes-statistic.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -62,6 +64,8 @@ function initializeAppFactory(
         FamilyDoctorRequestModule,
         PatientModule,
         ConsultationModule,
+        LaboratoryAnalysisModule,
+        DiabetesStatisticModule,
         RecordModule,
         AppRoutingModule,
         BrowserAnimationsModule,
