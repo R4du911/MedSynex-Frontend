@@ -1,19 +1,21 @@
 <div class="family-doctor-container">
   <div *ngIf="registeredFamilyDoctor !== null">
-    <span class="bolded-text">Your family doctor: </span> {{registeredFamilyDoctor.lastName}} {{registeredFamilyDoctor.firstName}},
-    {{registeredFamilyDoctor.dispensary.name}}</div>
+    <span class="bolded-text">Your family doctor: </span>{{ registeredFamilyDoctor.lastName }} {{ registeredFamilyDoctor.firstName }}, {{ registeredFamilyDoctor.dispensary.name }}
+  </div>
   <div *ngIf="registeredFamilyDoctor === null">
-    <span class="bolded-text">Your family doctor: </span> No assigned family doctor</div>
+    <span class="bolded-text">Your family doctor: </span>No assigned family doctor
+  </div>
 </div>
 
 <div class="table-container">
-  <h1 id="title">Pending Requests</h1>
-
-  <div *ngIf="registeredFamilyDoctor === null" class="button-container">
-    <button class="button-right" mat-raised-button color="primary" (click)="onMakeRequest()">
-      <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
-      Make new request
-    </button>
+  <div class="header-container">
+    <h1 id="title">Pending Requests</h1>
+    <div *ngIf="registeredFamilyDoctor === null" class="button-container">
+      <button class="button-right" mat-raised-button color="primary" (click)="onMakeRequest()">
+        <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+        Make new request
+      </button>
+    </div>
   </div>
 
   <div class="table-responsive">

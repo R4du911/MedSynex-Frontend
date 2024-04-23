@@ -6,6 +6,8 @@ import {Consultation} from "../../model/consultation";
 import {MatSort} from "@angular/material/sort";
 import {ConsultationService} from "../../service/consultation.service";
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
+import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
+import {ERole} from "../../../core/authorization/model/ERole";
 
 @Component({
   selector: 'app-consultation-list',
@@ -14,6 +16,7 @@ import {HandleErrorService} from "../../../utils/error-handling/service/handle-e
 })
 export class ConsultationListComponent implements OnInit, OnDestroy, AfterContentInit{
   @Input() patientCNP: string = '';
+  username: string | null = null;
 
   dataSource = new MatTableDataSource<Consultation>();
 
@@ -24,9 +27,11 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
+    private authenticationService: AuthenticationService,
     private consultationService: ConsultationService,
     private handleErrorService: HandleErrorService
   ) {
+    this.username = this.authenticationService.getLoggedInUsername();
   }
 
   ngAfterContentInit(): void {
@@ -58,4 +63,10 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
   onMoreInfo(consultation: Consultation) {
 
   }
+
+  onAddConsultation() {
+
+  }
+
+  protected readonly ERole = ERole;
 }

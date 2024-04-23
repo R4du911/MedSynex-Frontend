@@ -1,4 +1,11 @@
 <div class="table-container">
+  <div *hasRoles="[ERole.FamilyDoctor, ERole.Doctor]" class="button-container">
+    <button class="button-right" mat-raised-button color="primary" (click)="onAddConsultation()">
+      <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+      Add new consultation
+    </button>
+  </div>
+
   <div class="table-responsive">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
       <ng-container matColumnDef="Date">
@@ -45,6 +52,7 @@
           <button
             mat-icon-button
             matTooltip="Edit"
+            *ngIf="username == element.doctorUsername"
             (click)="onEdit(element)"
           >
             <mat-icon>edit</mat-icon>

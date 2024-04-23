@@ -8,6 +8,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {HasRolesDirective} from "../core/authorization/directives/has-roles.directive";
 
 
 
@@ -26,7 +27,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HasRolesDirective
   ]
 })
 export class ConsultationModule { }
