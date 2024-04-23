@@ -9,5 +9,7 @@ export const ErrorMessageMapping: Record<string, string> = {
   ["INVALID_USER"]: "User is invalid",
   ["PATIENT_ALREADY_REGISTERED"]: "Patient with same CNP already exists",
   ["FAMILY_DOCTOR_HAS_MAX_PATIENTS"]: "Selected Family doctor already has maximum number of patients",
-  ["FAMILY_DOCTOR_REQUEST_ALREADY_EXISTS"]: "A family doctor request with this patient and family doctor already exists"
+  ["FAMILY_DOCTOR_REQUEST_ALREADY_EXISTS"]: "A family doctor request with this patient and family doctor already exists",
+  ["FORBIDDEN"]: "Access is not allowed",
+  ["INVALID_DATA"]: "Data is invalid",
 };

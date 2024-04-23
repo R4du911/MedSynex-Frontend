@@ -15,6 +15,10 @@ import {HasRolesDirective} from "../../authorization/directives/has-roles.direct
 import {AuthorizationService} from "../../authorization/service/authorization.service";
 import {UserService} from "../../../user/service/user.service";
 import {User} from "../../../user/model/user";
+import {MatDialog} from "@angular/material/dialog";
+import {
+  RecordSearcherDoctorComponent
+} from "../../../record/components/record-searcher-doctor/record-searcher-doctor.component";
 
 
 
@@ -42,6 +46,7 @@ export class NavbarComponent implements OnInit{
   userCNP: number | undefined;
 
   constructor(
+    private dialog: MatDialog,
     private authenticationService: AuthenticationService,
     private authorizationService: AuthorizationService,
     private userService: UserService
@@ -65,6 +70,12 @@ export class NavbarComponent implements OnInit{
   logout(): void {
     this.authenticationService.logout();
     this.authorizationService.logout();
+  }
+
+  onSearchPatientRecords() {
+    this.dialog.open(RecordSearcherDoctorComponent, {
+      width: '400px'
+    });
   }
 
   protected readonly ERole = ERole;

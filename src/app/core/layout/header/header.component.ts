@@ -14,6 +14,10 @@ import {MatListModule} from "@angular/material/list";
 import {AuthorizationService} from "../../authorization/service/authorization.service";
 import {User} from "../../../user/model/user";
 import {UserService} from "../../../user/service/user.service";
+import {MatDialog} from "@angular/material/dialog";
+import {
+  RecordSearcherDoctorComponent
+} from "../../../record/components/record-searcher-doctor/record-searcher-doctor.component";
 
 @Component({
   selector: 'app-header',
@@ -39,6 +43,7 @@ export class HeaderComponent implements OnInit{
   userCNP: number | undefined;
 
   constructor(
+    private dialog: MatDialog,
     private authenticationService: AuthenticationService,
     private authorizationService: AuthorizationService,
     private userService: UserService
@@ -66,6 +71,12 @@ export class HeaderComponent implements OnInit{
 
   onSidenavToggle() {
     this.sideNavToggle.next();
+  }
+
+  onSearchPatientRecords() {
+    this.dialog.open(RecordSearcherDoctorComponent, {
+      width: '400px'
+    });
   }
 
     protected readonly ERole = ERole;

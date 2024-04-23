@@ -24,6 +24,7 @@ import {
 import {FdrPatientComponent} from "./family-doctor-request/components/fdr-patient/fdr-patient.component";
 import {FdPatientsListComponent} from "./family-doctor/components/fd-patients-list/fd-patients-list.component";
 import {ConsultationListComponent} from "./consultation/components/consultation-list/consultation-list.component";
+import {RecordDisplayComponent} from "./record/components/record-display/record-display.component";
 
 const routes : Routes = [
   {
@@ -100,7 +101,7 @@ const routes : Routes = [
     path: 'records/:cnp',
     canActivate: [AuthorizationGuard],
     data: {roles: [ERole.Patient, ERole.FamilyDoctor, ERole.Doctor] },
-    component: ConsultationListComponent
+    component: RecordDisplayComponent
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

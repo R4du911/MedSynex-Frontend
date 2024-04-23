@@ -8,6 +8,7 @@ import {UserService} from "../user/service/user.service";
 import {User} from "../user/model/user";
 import {FamilyDoctorService} from "../family-doctor/service/family-doctor.service";
 import {Patient} from "../patient/model/patient";
+import {HandleErrorService} from "./error-handling/service/handle-error.service";
 
 @Injectable()
 export class AuthorizationGuard implements CanActivate {
@@ -17,7 +18,8 @@ export class AuthorizationGuard implements CanActivate {
     private authorizationService: AuthorizationService,
     private userService: UserService,
     private familyDoctorService: FamilyDoctorService,
-    private router: Router
+    private router: Router,
+    private handleErrorService: HandleErrorService
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {
@@ -46,16 +48,43 @@ export class AuthorizationGuard implements CanActivate {
 
       if(userRole.includes(ERole.Patient) && username) {
         const user: User = await firstValueFrom(this.userService.loadCurrentUserDetails(username));
-        return user.patient.cnp == requestedCNP ? true : this.router.createUrlTree(['home']);
+
+        if (user.patient.cnp == requestedCNP) {
+          return true;
+        }
+
+        this.handleErrorService.handleError({ errorCode: "FORBIDDEN", message: "Access is not allowed" });
+        return this.router.createUrlTree(['home']);
       }
 
       if(userRole.includes(ERole.FamilyDoctor) && username) {
-        this.familyDoctorService.loadAllPatientsRegisteredAtAGivenFamilyDoctor(username)
-          .pipe(take(1)).subscribe();
+        const patients: Patient[] = await firstValueFrom(
+          this.familyDoctorService.loadAllPatientsRegisteredAtAGivenFamilyDoctor(username).pipe(take(1))
+        );
 
-        const patients: Patient[] = await firstValueFrom(this.familyDoctorService.getAllPatientsRegisteredAtAGivenFamilyDoctor());
         const isAuthorized: boolean = patients.some((patient: Patient) => patient.cnp == requestedCNP);
-        return isAuthorized ? true : this.router.createUrlTree(['home']);
+
+        if (isAuthorized) {
+          return true;
+        }
+
+        this.handleErrorService.handleError({ errorCode: "FORBIDDEN", message: "Access is not allowed" });
+        return this.router.createUrlTree(['home']);
+      }
+
+      if(userRole.includes(ERole.Doctor) && username) {
+        const users: User[] = await firstValueFrom(
+          this.userService.loadUsersWhichAreRegisteredAsPatients().pipe(take(1))
+        );
+
+        const isAuthorized: boolean = users.some((user: User) => user.patient.cnp == requestedCNP);
+
+        if (isAuthorized) {
+          return true;
+        }
+
+        this.handleErrorService.handleError({ errorCode: "INVALID_DATA", message: "Data is invalid" });
+        return this.router.createUrlTree(['home']);
       }
     }
 

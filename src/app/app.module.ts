@@ -30,6 +30,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {NgOptimizedImage} from "@angular/common";
 import {MatCardModule} from "@angular/material/card";
 import {ConsultationModule} from "./consultation/consultation.module";
+import {RecordModule} from "./record/record.module";
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -61,6 +62,7 @@ function initializeAppFactory(
         FamilyDoctorRequestModule,
         PatientModule,
         ConsultationModule,
+        RecordModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         BrowserModule,
