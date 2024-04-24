@@ -60,19 +60,19 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
 
   onEdit(consultation: Consultation) {
     this.dialog.open(ConsultationEditDialogComponent, {
-      data: consultation
+      width: '500px', data: consultation
     });
   }
 
   onMoreInfo(consultation: Consultation) {
     this.dialog.open(ConsultationMoreInfoComponent, {
-      data: consultation
+      width: '600px', data: consultation
     });
   }
 
   onAddConsultation() {
     this.dialog.open(ConsultationEditDialogComponent, {
-      data: null
+      width: '500px', data: null
     });
   }
 

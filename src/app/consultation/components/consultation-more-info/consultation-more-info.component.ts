@@ -14,4 +14,7 @@ export class ConsultationMoreInfoComponent {
   ) {
   }
 
+  onDialogClose() {
+    this.dialogRef.close();
+  }
 }

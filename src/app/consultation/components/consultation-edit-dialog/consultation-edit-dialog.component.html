@@ -1,1 +1,65 @@
-<p>consultation-edit-dialog works!</p>
+<div class="dialog-header">
+  <span *ngIf="data === null">Add new consultation</span>
+  <span *ngIf="data !== null">Edit consultation</span>
+  <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="consultation-edit-container">
+    <form class="consultation-edit-form" [formGroup]="consultationForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="diagnosis">Diagnosis</mat-label>
+          <input matInput id="diagnosis" type="text" formControlName="diagnosis" />
+          <mat-error *ngIf="consultationForm.get('diagnosis')!.invalid">{{
+              getErrorMessageDiagnosis()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="remarks">Remarks</mat-label>
+          <textarea matInput
+                    id="remarks"
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="3"
+                    cdkAutosizeMaxRows="5"
+                    formControlName="remarks"></textarea>
+          <mat-error *ngIf="consultationForm.get('remarks')!.invalid">{{
+              getErrorMessageRemarks()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="medications">Medications</mat-label>
+          <textarea matInput
+                    id="medications"
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="3"
+                    cdkAutosizeMaxRows="5"
+                    formControlName="medications"></textarea>
+          <mat-error *ngIf="consultationForm.get('medications')!.invalid">{{
+              getErrorMessageMedications()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="loading-modal-footer">
+    <button
+      class="formButton"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="onSave()"
+    >
+      Submit
+    </button>
+  </div>
+</mat-dialog-actions>

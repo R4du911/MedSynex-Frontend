@@ -10,6 +10,12 @@ import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {HasRolesDirective} from "../core/authorization/directives/has-roles.directive";
 import { ConsultationEditDialogComponent } from './components/consultation-edit-dialog/consultation-edit-dialog.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -30,7 +36,14 @@ import { ConsultationEditDialogComponent } from './components/consultation-edit-
     MatSortModule,
     MatTableModule,
     MatTooltipModule,
-    HasRolesDirective
+    HasRolesDirective,
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class ConsultationModule { }

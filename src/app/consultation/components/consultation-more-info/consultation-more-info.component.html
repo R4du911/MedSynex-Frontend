@@ -1,1 +1,38 @@
-<p>consultation-more-info works!</p>
+<!-- Consultation Details Dialog -->
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2>Consultation Details</h2>
+    <button mat-icon-button class="close-button" (click)="onDialogClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="dialog-content">
+    <div class="consultation-info-container">
+      <div class="info-item">
+        <label>Diagnosis:</label>
+        <div>{{ consultation.diagnosis }}</div>
+      </div>
+      <div class="info-item">
+        <label>Remarks:</label>
+        <div>{{ consultation.remarks }}</div>
+      </div>
+      <div class="info-item">
+        <label>Medications:</label>
+        <div>{{ consultation.medications }}</div>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="dialog-actions">
+    <div class="action-item">
+      <label>Consultation Date:</label>
+      <span>{{ consultation.createDate | date:'longDate' }}</span>
+    </div>
+    <div class="action-item">
+      <label>Last Updated:</label>
+      <span>{{ consultation.updateDate | date:'longDate' }}</span>
+    </div>
+    <button mat-raised-button color="primary" class="formButton" (click)="onDialogClose()">Close</button>
+  </mat-dialog-actions>
+</div>

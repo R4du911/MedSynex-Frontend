@@ -4,6 +4,10 @@
   gap: 10px;
 }
 
+mat-card {
+  background-color: rgba(74, 74, 74, 0.45);
+}
+
 .button-group button {
   padding: 0 2rem;
   margin: 0 5px;
