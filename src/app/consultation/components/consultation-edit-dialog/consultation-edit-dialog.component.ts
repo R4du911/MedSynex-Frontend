@@ -17,6 +17,7 @@ import {CreateConsultationRequestDTO} from "../../model/create-consultation-requ
 })
 export class ConsultationEditDialogComponent {
   consultationForm: UntypedFormGroup;
+  initialFormState: any;
 
   constructor(
     private fb: FormBuilder,
@@ -30,6 +31,7 @@ export class ConsultationEditDialogComponent {
 
     if (this.data.consultation) {
       this.consultationForm.patchValue(this.data.consultation);
+      this.initialFormState = this.consultationForm.value;
     }
   }
 
@@ -39,6 +41,10 @@ export class ConsultationEditDialogComponent {
       remarks: ['', [Validators.required, Validators.maxLength(400)]],
       medications: ['', [Validators.required, Validators.maxLength(400)]]
     });
+  }
+
+  hasFormChanged() {
+    return JSON.stringify(this.consultationForm.value) !== JSON.stringify(this.initialFormState);
   }
 
   onDialogClose() {

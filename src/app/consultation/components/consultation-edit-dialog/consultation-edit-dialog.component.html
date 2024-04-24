@@ -57,6 +57,7 @@
       mat-raised-button
       color="primary"
       type="submit"
+      [disabled]="consultationForm.invalid || consultationForm.pristine || !hasFormChanged()"
       (click)="onSave()"
     >
       Submit
