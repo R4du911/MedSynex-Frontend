@@ -1,6 +1,6 @@
 <div class="dialog-header">
-  <span *ngIf="data === null">Add new consultation</span>
-  <span *ngIf="data !== null">Edit consultation</span>
+  <span *ngIf="data.consultation === null">Add new consultation</span>
+  <span *ngIf="data.consultation !== null">Edit consultation</span>
   <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
     <mat-icon>close</mat-icon>
   </button>

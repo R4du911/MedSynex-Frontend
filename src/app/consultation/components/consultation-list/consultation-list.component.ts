@@ -60,7 +60,10 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
 
   onEdit(consultation: Consultation) {
     this.dialog.open(ConsultationEditDialogComponent, {
-      width: '500px', data: consultation
+      width: '500px', data: {
+        consultation: consultation,
+        patientCNP: this.patientCNP
+      }
     });
   }
 
@@ -72,7 +75,10 @@ export class ConsultationListComponent implements OnInit, OnDestroy, AfterConten
 
   onAddConsultation() {
     this.dialog.open(ConsultationEditDialogComponent, {
-      width: '500px', data: null
+      width: '500px', data: {
+        consultation: null,
+        patientCNP: this.patientCNP
+      }
     });
   }
 

@@ -25,12 +25,12 @@ export class ConsultationService {
       .pipe(tap((consultations: Consultation[]) => this.consultationsByPatientList$.next(consultations)));
   }
 
-  createConsultation(cnp: string, createConsultationRequestDTO: CreateConsultationRequestDTO) : Observable<HttpResponse<string>> {
-    return this.consultationResourceService.createConsultation(Number(cnp), createConsultationRequestDTO);
+  createConsultation(cnp: number, createConsultationRequestDTO: CreateConsultationRequestDTO) : Observable<HttpResponse<string>> {
+    return this.consultationResourceService.createConsultation(cnp, createConsultationRequestDTO);
   }
 
-  updateConsultation(cnp: string, updateConsultationRequestDTO: UpdateConsultationRequestDTO) : Observable<HttpResponse<string>> {
-    return this.consultationResourceService.updateConsultation(Number(cnp), updateConsultationRequestDTO);
+  updateConsultation(cnp: number, updateConsultationRequestDTO: UpdateConsultationRequestDTO) : Observable<HttpResponse<string>> {
+    return this.consultationResourceService.updateConsultation(cnp, updateConsultationRequestDTO);
   }
 
 }
