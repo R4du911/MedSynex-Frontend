@@ -24,8 +24,8 @@
           <textarea matInput
                     id="remarks"
                     cdkTextareaAutosize
-                    cdkAutosizeMinRows="3"
-                    cdkAutosizeMaxRows="5"
+                    cdkAutosizeMinRows="4"
+                    cdkAutosizeMaxRows="6"
                     formControlName="remarks"></textarea>
           <mat-error *ngIf="consultationForm.get('remarks')!.invalid">{{
               getErrorMessageRemarks()
@@ -39,8 +39,8 @@
           <textarea matInput
                     id="medications"
                     cdkTextareaAutosize
-                    cdkAutosizeMinRows="3"
-                    cdkAutosizeMaxRows="5"
+                    cdkAutosizeMinRows="4"
+                    cdkAutosizeMaxRows="6"
                     formControlName="medications"></textarea>
           <mat-error *ngIf="consultationForm.get('medications')!.invalid">{{
               getErrorMessageMedications()
