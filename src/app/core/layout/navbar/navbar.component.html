@@ -3,6 +3,14 @@
     <mat-nav-list>
       <a (click)="sidenav.toggle()" mat-list-item>Close</a>
 
+      <a *hasRoles="[ERole.Laboratory]"
+         (click)="onAddLaboratoryAnalysisResult()"
+         mat-list-item
+         matTooltip="Add Analysis Result"
+      >
+        Add Analysis Result
+      </a>
+
       <a *hasRoles="[ERole.Doctor]"
          (click)="onSearchPatientRecords()"
          mat-list-item

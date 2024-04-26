@@ -1,1 +1,167 @@
-<p>laboratory-analysis-create-dialog works!</p>
+<div class="dialog-header">
+  <span>Add new laboratory analysis result</span>
+  <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="laboratory-analysis-result-crate-container">
+    <form class="laboratory-analysis-result-create-form" [formGroup]="laboratoryAnalysisResultForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="glucose">Glucose</mat-label>
+          <input matInput id="glucose" type="number" formControlName="glucose" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('glucose')!.invalid">{{
+              getErrorMessageGlucose()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="insulin">Insulin</mat-label>
+          <input matInput id="insulin" type="number" formControlName="insulin" />
+          <span class="measurement-unit" matSuffix>µUI/mL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('insulin')!.invalid">{{
+              getErrorMessageInsulin()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="cholesterol">Cholesterol</mat-label>
+          <input matInput id="cholesterol" type="number" formControlName="cholesterol" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('cholesterol')!.invalid">{{
+              getErrorMessageCholesterol()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="triglyceride">Triglyceride</mat-label>
+          <input matInput id="triglyceride" type="number" formControlName="triglyceride" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('triglyceride')!.invalid">{{
+              getErrorMessageTriglyceride()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="haemoglobin">Haemoglobin</mat-label>
+          <input matInput id="haemoglobin" type="number" formControlName="haemoglobin" />
+          <span class="measurement-unit" matSuffix>g/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('haemoglobin')!.invalid">{{
+              getErrorMessageHaemoglobin()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="leukocyteCount">Leukocyte Count</mat-label>
+          <input matInput id="leukocyteCount" type="number" formControlName="leukocyteCount" />
+          <span class="measurement-unit" matSuffix>mii/μL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('leukocyteCount')!.invalid">{{
+              getErrorMessageLeukocyteCount()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="plateletCount">Platelet Count</mat-label>
+          <input matInput id="plateletCount" type="number" formControlName="plateletCount" />
+          <span class="measurement-unit" matSuffix>mii/μL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('plateletCount')!.invalid">{{
+              getErrorMessagePlateletCount()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="totalCalcium">Total Calcium</mat-label>
+          <input matInput id="totalCalcium" type="number" formControlName="totalCalcium" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('totalCalcium')!.invalid">{{
+              getErrorMessageTotalCalcium()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="totalMagnesium">Total Magnesium</mat-label>
+          <input matInput id="totalMagnesium" type="number" formControlName="totalMagnesium" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('totalMagnesium')!.invalid">{{
+              getErrorMessageTotalMagnesium()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="serumIron">Iron Serum</mat-label>
+          <input matInput id="serumIron" type="number" formControlName="serumIron" />
+          <span class="measurement-unit" matSuffix>µg/dL</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('serumIron')!.invalid">{{
+              getErrorMessageSerumIron()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="serumSodium">Sodium Serum</mat-label>
+          <input matInput id="serumSodium" type="number" formControlName="serumSodium" />
+          <span class="measurement-unit" matSuffix>mmol/L</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('serumSodium')!.invalid">{{
+              getErrorMessageSerumSodium()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="serumPotassium">Potassium Serum</mat-label>
+          <input matInput id="serumPotassium" type="number" formControlName="serumPotassium" />
+          <span class="measurement-unit" matSuffix>mmol/L</span>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('serumPotassium')!.invalid">{{
+              getErrorMessageSerumPotassium()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="cnp">Patient CNP</mat-label>
+          <input matInput id="cnp" type="number" formControlName="cnp" />
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('cnp')!.invalid">{{
+              getErrorMessageCNP()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="loading-modal-footer">
+    <button
+      class="formButton"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="laboratoryAnalysisResultForm.invalid"
+      (click)="onSave()"
+    >
+      Submit
+    </button>
+  </div>
+</mat-dialog-actions>

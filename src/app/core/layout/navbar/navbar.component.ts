@@ -19,6 +19,9 @@ import {MatDialog} from "@angular/material/dialog";
 import {
   RecordSearcherDoctorComponent
 } from "../../../record/components/record-searcher-doctor/record-searcher-doctor.component";
+import {
+  LaboratoryAnalysisCreateDialogComponent
+} from "../../../laboratory-analysis/components/laboratory-analysis-create-dialog/laboratory-analysis-create-dialog.component";
 
 
 
@@ -75,6 +78,12 @@ export class NavbarComponent implements OnInit{
   onSearchPatientRecords() {
     this.dialog.open(RecordSearcherDoctorComponent, {
       width: '400px'
+    });
+  }
+
+  onAddLaboratoryAnalysisResult() {
+    this.dialog.open(LaboratoryAnalysisCreateDialogComponent, {
+      width: '650px'
     });
   }
 

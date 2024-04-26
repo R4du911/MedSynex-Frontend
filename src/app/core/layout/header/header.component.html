@@ -8,6 +8,14 @@
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs fxHide.sm>
     <ul fxLayout fxLayoutGap="1rem" class="navigation-items">
       <li>
+        <a *hasRoles="[ERole.Laboratory]"
+           (click)="onAddLaboratoryAnalysisResult()"
+           mat-button
+           matTooltip="Add Analysis Result"
+        >
+          Add Analysis Result
+        </a>
+
         <a *hasRoles="[ERole.Doctor]"
            (click)="onSearchPatientRecords()"
            mat-button

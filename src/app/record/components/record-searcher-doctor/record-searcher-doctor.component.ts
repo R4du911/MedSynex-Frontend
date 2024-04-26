@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
-import {Observable, Subject} from "rxjs";
-import {UserService} from "../../../user/service/user.service";
-import {User} from "../../../user/model/user";
 import {Router} from "@angular/router";
 
 @Component({
