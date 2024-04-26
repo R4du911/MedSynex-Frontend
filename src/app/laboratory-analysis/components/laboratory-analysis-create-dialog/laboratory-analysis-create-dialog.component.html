@@ -22,7 +22,7 @@
         <mat-form-field appearance="fill">
           <mat-label for="insulin">Insulin</mat-label>
           <input matInput id="insulin" type="number" formControlName="insulin" />
-          <span class="measurement-unit" matSuffix>µUI/mL</span>
+          <span class="measurement-unit" matSuffix>pmol/L</span>
           <mat-error *ngIf="laboratoryAnalysisResultForm.get('insulin')!.invalid">{{
               getErrorMessageInsulin()
             }}</mat-error>
