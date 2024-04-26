@@ -3,6 +3,10 @@ import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
 import {HandleErrorService} from "../../../utils/error-handling/service/handle-error.service";
 import {LaboratoryAnalysisService} from "../../service/laboratory-analysis.service";
+import {AuthenticationService} from "../../../core/authentication/service/authentication.service";
+import {CreateLaboratoryAnalysisResultRequestDTO} from "../../model/create-laboratory-analysis-result-request";
+import {take} from "rxjs";
+import {CustomErrorResponse} from "../../../utils/error-handling/model/custom-error-response";
 
 @Component({
   selector: 'app-laboratory-analysis-create-dialog',
@@ -16,6 +20,7 @@ export class LaboratoryAnalysisCreateDialogComponent {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<LaboratoryAnalysisCreateDialogComponent>,
     private handleErrorService: HandleErrorService,
+    private authenticationService: AuthenticationService,
     private laboratoryAnalysisResultService: LaboratoryAnalysisService
   ) {
     this.laboratoryAnalysisResultForm = this.setupForm();
@@ -44,7 +49,29 @@ export class LaboratoryAnalysisCreateDialogComponent {
   }
 
   onSave() {
-    this.dialogRef.close();
+    const formValue = this.laboratoryAnalysisResultForm.getRawValue();
+    const laboratoryStaffUsername: string | null = this.authenticationService.getLoggedInUsername();
+
+    if (laboratoryStaffUsername !== null) {
+      const createLaboratoryAnalysisResultRequest: CreateLaboratoryAnalysisResultRequestDTO = new CreateLaboratoryAnalysisResultRequestDTO(
+        formValue.glucose, formValue.insulin, formValue.cholesterol, formValue.triglyceride, formValue.haemoglobin,
+        formValue.leukocyteCount, formValue.plateletCount, formValue.totalCalcium, formValue.totalMagnesium,
+        formValue.serumIron, formValue.serumSodium, formValue.serumPotassium, laboratoryStaffUsername);
+
+      this.laboratoryAnalysisResultService.createLaboratoryAnalysisResult(formValue.cnp, createLaboratoryAnalysisResultRequest)
+        .pipe(take(1))
+        .subscribe(() => {
+          this.dialogRef.close();
+          this.handleErrorService.handleSuccess("Laboratory Analysis Result registered successfully for patient " +
+            "with CNP " + formValue.cnp);
+        },
+          (error: CustomErrorResponse) => {
+            this.handleErrorService.handleError(error);
+        });
+    }
+    else {
+      this.handleErrorService.handleError({ errorCode: "INVALID_USER", message: "User is invalid" });
+    }
   }
 
   getErrorMessageGlucose() {
