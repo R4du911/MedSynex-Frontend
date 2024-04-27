@@ -25,7 +25,7 @@
   <mat-card-content>
     <ng-container [ngSwitch]="activeComponent">
       <app-consultation-list *ngSwitchCase="'consultation'" [patientCNP]="patientCNP"></app-consultation-list>
-      <app-laboratory-analysis-list *ngSwitchCase="'laboratory-analysis'"></app-laboratory-analysis-list>
+      <app-laboratory-analysis-list *ngSwitchCase="'laboratory-analysis'" [patientCNP]="patientCNP"></app-laboratory-analysis-list>
       <app-diabetes-chart *ngSwitchCase="'diabetes-chart'"></app-diabetes-chart>
     </ng-container>
   </mat-card-content>

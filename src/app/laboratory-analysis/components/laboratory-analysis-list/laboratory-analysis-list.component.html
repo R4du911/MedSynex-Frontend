@@ -1,1 +1,86 @@
-<p>laboratory-analysis-list works!</p>
+<div class="table-container">
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="Diabetes Risk">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="diabetesRisk">Diabetes Risk</th>
+        <td mat-cell *matCellDef="let element">
+          <span *ngIf="element.diabetesRisk === false" class="dot dot-green" matTooltip="No Diabetes Risk"></span>
+          <span *ngIf="element.diabetesRisk === true" class="dot dot-red" matTooltip="Diabetes Risk"></span>
+          <button id="prediction-request-button" *ngIf="element.diabetesRisk === null" mat-button
+                  (click)="requestDiabetesPrediction(element)">Request prediction</button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="createDate">
+          Date
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.createDate }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Laboratory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="laboratoryName">
+          Laboratory
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.laboratoryName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions" [sticky]="true">
+        <th mat-header-cell *matHeaderCellDef>
+          Actions
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            matTooltip="More Info"
+            (click)="onMoreInfo(element)"
+          >
+            <mat-icon>info</mat-icon>
+          </button>
+
+          <button
+            mat-icon-button
+            matTooltip="Edit Remarks"
+            *hasRoles="[ERole.FamilyDoctor]"
+            (click)="onEditRemarks(element)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr class="empty-table" *matNoDataRow>
+        <td [colSpan]="4">No laboratory analyses results!</td>
+      </tr>
+      <tr
+        mat-header-row
+        *matHeaderRowDef="
+          [
+            'Diabetes Risk',
+            'Date',
+            'Laboratory',
+            'Actions'
+          ];
+          sticky: true
+        "
+      ></tr>
+      <tr
+        mat-row
+        *matRowDef="
+          let row;
+          columns: [
+            'Diabetes Risk',
+            'Date',
+            'Laboratory',
+            'Actions'
+          ];
+        "
+      ></tr>
+    </table>
+    <mat-paginator
+      style="position: sticky; bottom: 0"
+      [showFirstLastButtons]=true
+      [pageSizeOptions]="[5, 10, 15]"
+    ></mat-paginator>
+  </div>
+</div>

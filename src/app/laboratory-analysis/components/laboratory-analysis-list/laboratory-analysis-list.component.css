@@ -1,0 +1,56 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  gap: 1rem;
+  height: 100%;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#title {
+  text-align: center;
+  font-weight: bold;
+}
+
+mat-paginator {
+  z-index: 10;
+  position: sticky;
+  bottom: 0;
+}
+
+.empty-table {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.empty-table td {
+  padding: 1rem;
+}
+
+.dot {
+  margin-left: 20px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-green {
+  background-color: green;
+}
+
+.dot-red {
+  background-color: red;
+}
+
+#prediction-request-button {
+  padding: 15px;
+  background-color: rgb(34, 140, 128);
+}

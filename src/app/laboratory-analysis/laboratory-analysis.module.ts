@@ -8,25 +8,39 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {HasRolesDirective} from "../core/authorization/directives/has-roles.directive";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
+import {MatTableModule} from "@angular/material/table";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { LaboratoryAnalysisEditDialogComponent } from './components/laboratory-analysis-edit-dialog/laboratory-analysis-edit-dialog.component';
+import { LaboratoryAnalysisMoreInfoComponent } from './components/laboratory-analysis-more-info/laboratory-analysis-more-info.component';
 
 
 
 @NgModule({
     declarations: [
         LaboratoryAnalysisListComponent,
-        LaboratoryAnalysisCreateDialogComponent
+        LaboratoryAnalysisCreateDialogComponent,
+        LaboratoryAnalysisEditDialogComponent,
+        LaboratoryAnalysisMoreInfoComponent
     ],
     exports: [
         LaboratoryAnalysisListComponent
     ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        HasRolesDirective,
+        MatPaginatorModule,
+        MatSortModule,
+        MatTableModule,
+        MatTooltipModule
+    ]
 })
 export class LaboratoryAnalysisModule { }
