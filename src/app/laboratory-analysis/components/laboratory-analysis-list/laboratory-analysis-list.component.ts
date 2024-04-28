@@ -7,6 +7,9 @@ import {MatPaginator} from "@angular/material/paginator";
 import {LaboratoryAnalysisService} from "../../service/laboratory-analysis.service";
 import {MatDialog} from "@angular/material/dialog";
 import {ERole} from "../../../core/authorization/model/ERole";
+import {
+  LaboratoryAnalysisMoreInfoComponent
+} from "../laboratory-analysis-more-info/laboratory-analysis-more-info.component";
 
 @Component({
   selector: 'app-laboratory-analysis-list',
@@ -56,7 +59,9 @@ export class LaboratoryAnalysisListComponent implements OnInit, OnDestroy, After
   }
 
   onMoreInfo(laboratoryAnalysisResult: LaboratoryAnalysisResult) {
-
+    this.dialog.open(LaboratoryAnalysisMoreInfoComponent,{
+      width: '650px', data: laboratoryAnalysisResult
+    });
   }
 
   requestDiabetesPrediction(laboratoryAnalysisResult: LaboratoryAnalysisResult) {

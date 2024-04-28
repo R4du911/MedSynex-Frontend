@@ -1,0 +1,100 @@
+.dialog-container {
+  font-family: 'Arial', sans-serif;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: rgba(100, 100, 100, 0.87);
+}
+
+.dialog-header h2 {
+  color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87));
+  margin: 0;
+  font-size: 24px;
+}
+
+.close-button {
+  min-width: auto;
+  margin: -8px;
+}
+
+.dialog-content {
+  padding: 16px;
+}
+
+.laboratory-analysis-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 10px);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.info-item label {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: rgba(100, 100, 100, 0.87);
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+  color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87));
+}
+
+.action-item:last-child {
+  margin-right: 0;
+}
+
+.formButton {
+  padding: 10px 30px;
+  margin-left: auto;
+}
+
+.info-item div {
+  white-space: pre-line;
+}
+
+.shared-info-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.green-text {
+  color: #008000;
+}
+
+.yellow-text {
+  color: #FFFF00;
+}
+
+.red-text {
+  color: #FF0000;
+}

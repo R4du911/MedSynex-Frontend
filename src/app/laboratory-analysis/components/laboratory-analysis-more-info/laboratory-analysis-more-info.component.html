@@ -1,1 +1,124 @@
-<p>laboratory-analysis-more-info works!</p>
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2>Laboratory Analysis Result Details</h2>
+    <button mat-icon-button class="close-button" (click)="onDialogClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="dialog-content">
+    <div class="laboratory-analysis-info-container">
+      <div class="info-column">
+        <div class="info-item">
+          <label>Glucose:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.glucose >= 73 && laboratoryAnalysisResult.glucose <= 110,
+               'yellow-text': laboratoryAnalysisResult.glucose >= 111 && laboratoryAnalysisResult.glucose <= 126,
+               'red-text': laboratoryAnalysisResult.glucose > 126 || laboratoryAnalysisResult.glucose < 73
+             }">
+            {{ laboratoryAnalysisResult.glucose }} mg/dL
+          </div>
+        </div>
+        <div class="info-item">
+          <label>Insulin:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.insulin >= 18 && laboratoryAnalysisResult.insulin <= 172,
+               'yellow-text': laboratoryAnalysisResult.insulin >= 173 && laboratoryAnalysisResult.insulin <= 243,
+               'red-text': laboratoryAnalysisResult.insulin > 243
+             }">
+            {{ laboratoryAnalysisResult.insulin }} pmol/L
+          </div>
+        </div>
+        <div class="info-item">
+          <label>Cholesterol:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.cholesterol < 200,
+               'yellow-text': laboratoryAnalysisResult.cholesterol >= 200 && laboratoryAnalysisResult.cholesterol <= 239,
+               'red-text': laboratoryAnalysisResult.cholesterol > 240
+             }">
+            {{ laboratoryAnalysisResult.cholesterol }} mg/dL
+          </div>
+        </div>
+        <div class="info-item">
+          <label>Triglyceride:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.triglyceride < 150,
+               'yellow-text': laboratoryAnalysisResult.triglyceride >= 151 && laboratoryAnalysisResult.triglyceride <= 500,
+               'red-text': laboratoryAnalysisResult.triglyceride > 500
+             }">
+            {{ laboratoryAnalysisResult.triglyceride }} mg/dL
+          </div>
+        </div>
+        <div class="info-item">
+          <label>Haemoglobin:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.haemoglobin >= 13.5 && laboratoryAnalysisResult.haemoglobin <= 16.5,
+               'yellow-text': (laboratoryAnalysisResult.haemoglobin >= 12 && laboratoryAnalysisResult.haemoglobin < 13.5) ||
+               (laboratoryAnalysisResult.haemoglobin > 16.5 && laboratoryAnalysisResult.haemoglobin <= 18),
+               'red-text': laboratoryAnalysisResult.haemoglobin < 12 || laboratoryAnalysisResult.haemoglobin > 18
+             }">
+            {{ laboratoryAnalysisResult.haemoglobin }} g/dL
+          </div>
+        </div>
+        <div class="info-item">
+          <label>Leukocyte Count:</label>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.leukocyteCount >= 4.5 && laboratoryAnalysisResult.leukocyteCount <= 11,
+               'yellow-text': laboratoryAnalysisResult.leukocyteCount < 4.5 || laboratoryAnalysisResult.leukocyteCount > 11
+             }">
+            {{ laboratoryAnalysisResult.leukocyteCount }} mii/μL
+          </div>
+        </div>
+      </div>
+
+      <div class="info-column">
+        <div class="info-item">
+          <label>Platelet Count:</label>
+          <div>{{ laboratoryAnalysisResult.plateletCount}} mii/μL</div>
+        </div>
+        <div class="info-item">
+          <label>Total Calcium:</label>
+          <div>{{ laboratoryAnalysisResult.totalCalcium}} mg/dL</div>
+        </div>
+        <div class="info-item">
+          <label>Total Magnesium:</label>
+          <div>{{ laboratoryAnalysisResult.totalMagnesium}} mg/dL</div>
+        </div>
+        <div class="info-item">
+          <label>Iron Serum:</label>
+          <div>{{ laboratoryAnalysisResult.serumIron}} µg/dL</div>
+        </div>
+        <div class="info-item">
+          <label>Sodium Serum:</label>
+          <div>{{ laboratoryAnalysisResult.serumSodium}} mmol/L</div>
+        </div>
+        <div class="info-item">
+          <label>Potassium Serum:</label>
+          <div>{{ laboratoryAnalysisResult.serumPotassium}} mmol/L</div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="shared-info-item">
+      <label>Remarks:</label>
+      <div>{{ laboratoryAnalysisResult.remarks }}</div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="dialog-actions">
+    <div class="action-item">
+      <label>Diabetes Risk:</label>
+      <div>{{ laboratoryAnalysisResult.diabetesRisk }}</div>
+    </div>
+    <div class="action-item">
+      <label>Consultation Date:</label>
+      <span>{{ laboratoryAnalysisResult.createDate | date:'longDate' }}</span>
+    </div>
+    <div class="action-item">
+      <label>Last Updated:</label>
+      <span>{{ laboratoryAnalysisResult.updateDate | date:'longDate' }}</span>
+    </div>
+    <button mat-raised-button color="primary" class="formButton" (click)="onDialogClose()">Close</button>
+  </mat-dialog-actions>
+</div>
