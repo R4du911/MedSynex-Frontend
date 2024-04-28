@@ -13,7 +13,7 @@
           <label>Glucose:</label>
           <div [ngClass]="{
                'green-text': laboratoryAnalysisResult.glucose >= 73 && laboratoryAnalysisResult.glucose <= 110,
-               'yellow-text': laboratoryAnalysisResult.glucose >= 111 && laboratoryAnalysisResult.glucose <= 126,
+               'yellow-text': laboratoryAnalysisResult.glucose > 110 && laboratoryAnalysisResult.glucose <= 126,
                'red-text': laboratoryAnalysisResult.glucose > 126 || laboratoryAnalysisResult.glucose < 73
              }">
             {{ laboratoryAnalysisResult.glucose }} mg/dL
@@ -23,7 +23,7 @@
           <label>Insulin:</label>
           <div [ngClass]="{
                'green-text': laboratoryAnalysisResult.insulin >= 18 && laboratoryAnalysisResult.insulin <= 172,
-               'yellow-text': laboratoryAnalysisResult.insulin >= 173 && laboratoryAnalysisResult.insulin <= 243,
+               'yellow-text': laboratoryAnalysisResult.insulin > 172 && laboratoryAnalysisResult.insulin <= 243,
                'red-text': laboratoryAnalysisResult.insulin > 243
              }">
             {{ laboratoryAnalysisResult.insulin }} pmol/L
@@ -34,7 +34,7 @@
           <div [ngClass]="{
                'green-text': laboratoryAnalysisResult.cholesterol < 200,
                'yellow-text': laboratoryAnalysisResult.cholesterol >= 200 && laboratoryAnalysisResult.cholesterol <= 239,
-               'red-text': laboratoryAnalysisResult.cholesterol > 240
+               'red-text': laboratoryAnalysisResult.cholesterol > 239
              }">
             {{ laboratoryAnalysisResult.cholesterol }} mg/dL
           </div>
@@ -74,27 +74,67 @@
       <div class="info-column">
         <div class="info-item">
           <label>Platelet Count:</label>
-          <div>{{ laboratoryAnalysisResult.plateletCount}} mii/μL</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.plateletCount >= 150 && laboratoryAnalysisResult.plateletCount <= 450,
+               'yellow-text': laboratoryAnalysisResult.plateletCount >= 50 && laboratoryAnalysisResult.plateletCount < 150,
+               'red-text': laboratoryAnalysisResult.plateletCount < 50
+             }">
+            {{ laboratoryAnalysisResult.plateletCount }} mii/μL
+          </div>
         </div>
         <div class="info-item">
           <label>Total Calcium:</label>
-          <div>{{ laboratoryAnalysisResult.totalCalcium}} mg/dL</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.totalCalcium >= 8.8 && laboratoryAnalysisResult.totalCalcium <= 10.4,
+               'yellow-text': (laboratoryAnalysisResult.totalCalcium >= 6.0 && laboratoryAnalysisResult.totalCalcium < 8.8) ||
+               (laboratoryAnalysisResult.totalCalcium > 10.4 && laboratoryAnalysisResult.totalCalcium <= 13.0),
+               'red-text': laboratoryAnalysisResult.totalCalcium < 6.0 || laboratoryAnalysisResult.totalCalcium > 13.0
+             }">
+            {{ laboratoryAnalysisResult.totalCalcium }} mg/dL
+          </div>
         </div>
         <div class="info-item">
           <label>Total Magnesium:</label>
-          <div>{{ laboratoryAnalysisResult.totalMagnesium}} mg/dL</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.totalMagnesium >= 1.5 && laboratoryAnalysisResult.totalMagnesium <= 2.6,
+               'yellow-text': (laboratoryAnalysisResult.totalMagnesium >= 0.5 && laboratoryAnalysisResult.totalMagnesium < 1.5) ||
+               (laboratoryAnalysisResult.totalMagnesium > 2.6 && laboratoryAnalysisResult.totalMagnesium <= 3.0),
+               'red-text': laboratoryAnalysisResult.totalMagnesium < 0.5 || laboratoryAnalysisResult.totalMagnesium > 3.0
+             }">
+            {{ laboratoryAnalysisResult.totalMagnesium }} mg/dL
+          </div>
         </div>
         <div class="info-item">
           <label>Iron Serum:</label>
-          <div>{{ laboratoryAnalysisResult.serumIron}} µg/dL</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.serumIron >= 55 && laboratoryAnalysisResult.serumIron <= 160,
+               'yellow-text': laboratoryAnalysisResult.serumIron > 160 && laboratoryAnalysisResult.serumIron <= 279,
+               'red-text': laboratoryAnalysisResult.serumIron > 279
+             }">
+            {{ laboratoryAnalysisResult.serumIron }} µg/dL
+          </div>
         </div>
         <div class="info-item">
           <label>Sodium Serum:</label>
-          <div>{{ laboratoryAnalysisResult.serumSodium}} mmol/L</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.serumSodium >= 135 && laboratoryAnalysisResult.serumSodium <= 147,
+               'yellow-text': (laboratoryAnalysisResult.serumSodium >= 115 && laboratoryAnalysisResult.serumSodium < 135) ||
+               (laboratoryAnalysisResult.serumSodium > 147 && laboratoryAnalysisResult.serumSodium <= 160),
+               'red-text': laboratoryAnalysisResult.serumSodium < 115 || laboratoryAnalysisResult.serumSodium > 160
+             }">
+            {{ laboratoryAnalysisResult.serumSodium }} mmol/L
+          </div>
         </div>
         <div class="info-item">
           <label>Potassium Serum:</label>
-          <div>{{ laboratoryAnalysisResult.serumPotassium}} mmol/L</div>
+          <div [ngClass]="{
+               'green-text': laboratoryAnalysisResult.serumPotassium >= 3.5 && laboratoryAnalysisResult.serumPotassium <= 5.0,
+               'yellow-text': (laboratoryAnalysisResult.serumPotassium >= 2.5 && laboratoryAnalysisResult.serumPotassium < 3.5) ||
+               (laboratoryAnalysisResult.serumPotassium > 5.0 && laboratoryAnalysisResult.serumPotassium <= 6.5),
+               'red-text': laboratoryAnalysisResult.serumPotassium < 2.5 || laboratoryAnalysisResult.serumPotassium > 6.5
+             }">
+            {{ laboratoryAnalysisResult.serumPotassium }} mmol/L
+          </div>
         </div>
       </div>
     </div>

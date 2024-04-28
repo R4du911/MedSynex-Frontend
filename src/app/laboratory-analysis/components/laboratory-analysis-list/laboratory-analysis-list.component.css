@@ -43,11 +43,11 @@ mat-paginator {
 }
 
 .dot-green {
-  background-color: green;
+  background-color: #22be22;
 }
 
 .dot-red {
-  background-color: red;
+  background-color: #e71919;
 }
 
 #prediction-request-button {
