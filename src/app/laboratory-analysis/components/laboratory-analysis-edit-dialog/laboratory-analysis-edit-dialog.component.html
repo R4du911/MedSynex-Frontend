@@ -1,1 +1,40 @@
-<p>laboratory-analysis-edit-dialog works!</p>
+<div class="dialog-header">
+  <span>Edit remarks</span>
+  <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="laboratory-analysis-result-edit-container">
+    <form class="laboratory-analysis-result-edit-form" [formGroup]="laboratoryAnalysisResultForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="remarks">Remarks</mat-label>
+          <textarea matInput
+                    id="remarks"
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="4"
+                    cdkAutosizeMaxRows="6"
+                    formControlName="remarks"></textarea>
+          <mat-error *ngIf="laboratoryAnalysisResultForm.get('remarks')!.invalid">{{
+              getErrorMessageRemarks()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="loading-modal-footer">
+    <button
+      class="formButton"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="laboratoryAnalysisResultForm.invalid || laboratoryAnalysisResultForm.pristine || !hasFormChanged()"
+      (click)="onSave()"
+    >
+      Submit
+    </button>
+  </div>
+</mat-dialog-actions>

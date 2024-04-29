@@ -10,6 +10,9 @@ import {ERole} from "../../../core/authorization/model/ERole";
 import {
   LaboratoryAnalysisMoreInfoComponent
 } from "../laboratory-analysis-more-info/laboratory-analysis-more-info.component";
+import {
+  LaboratoryAnalysisEditDialogComponent
+} from "../laboratory-analysis-edit-dialog/laboratory-analysis-edit-dialog.component";
 
 @Component({
   selector: 'app-laboratory-analysis-list',
@@ -55,7 +58,12 @@ export class LaboratoryAnalysisListComponent implements OnInit, OnDestroy, After
   }
 
   onEditRemarks(laboratoryAnalysisResult: LaboratoryAnalysisResult) {
-
+    this.dialog.open(LaboratoryAnalysisEditDialogComponent, {
+      width: '600px', data: {
+        laboratoryAnalysisResult: laboratoryAnalysisResult,
+        patientCNP: this.patientCNP
+      }
+    });
   }
 
   onMoreInfo(laboratoryAnalysisResult: LaboratoryAnalysisResult) {

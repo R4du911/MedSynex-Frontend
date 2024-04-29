@@ -4,6 +4,9 @@ import {LaboratoryAnalysisResult} from "../model/laboratory-analysis-result";
 import {LaboratoryAnalysisResourceService} from "./laboratory-analysis-resource.service";
 import {HttpResponse} from "@angular/common/http";
 import {CreateLaboratoryAnalysisResultRequestDTO} from "../model/create-laboratory-analysis-result-request";
+import {
+  UpdateRemarksLaboratoryAnalysisResultRequestDTO
+} from "../model/update-remarks-laboratory-analysis-result-request";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +29,9 @@ export class LaboratoryAnalysisService {
 
   createLaboratoryAnalysisResult(cnp: number, createLaboratoryAnalysisResultRequestDTO: CreateLaboratoryAnalysisResultRequestDTO) : Observable<HttpResponse<string>> {
     return this.laboratoryAnalysisResultResourceService.createLaboratoryAnalysisResult(cnp, createLaboratoryAnalysisResultRequestDTO);
+  }
+
+  updateRemarksForLaboratoryAnalysisResult(cnp: number, updateRemarksLaboratoryAnalysisRequestDTO: UpdateRemarksLaboratoryAnalysisResultRequestDTO) : Observable<HttpResponse<string>> {
+    return this.laboratoryAnalysisResultResourceService.updateRemarksForLaboratoryAnalysisResult(cnp, updateRemarksLaboratoryAnalysisRequestDTO);
   }
 }
