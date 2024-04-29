@@ -38,8 +38,8 @@ export class ConsultationEditDialogComponent {
   setupForm() {
     return this.fb.group({
       diagnosis: ['', Validators.required],
-      remarks: ['', [Validators.required, Validators.maxLength(400)]],
-      medications: ['', [Validators.required, Validators.maxLength(400)]]
+      remarks: ['', [Validators.required, Validators.maxLength(250)]],
+      medications: ['', [Validators.required, Validators.maxLength(250)]]
     });
   }
 
@@ -112,7 +112,7 @@ export class ConsultationEditDialogComponent {
     }
 
     if (this.consultationForm.get('remarks')!.hasError('maxlength')) {
-      return 'Remarks cannot exceed 400 characters';
+      return 'Remarks cannot exceed 250 characters';
     }
 
     return '';
@@ -124,7 +124,7 @@ export class ConsultationEditDialogComponent {
     }
 
     if (this.consultationForm.get('medications')!.hasError('maxlength')) {
-      return 'Medications cannot exceed 400 characters';
+      return 'Medications cannot exceed 250 characters';
     }
 
     return '';

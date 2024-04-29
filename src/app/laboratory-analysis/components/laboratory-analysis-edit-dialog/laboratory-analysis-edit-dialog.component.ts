@@ -60,7 +60,7 @@ export class LaboratoryAnalysisEditDialogComponent {
 
   setupForm() {
     return this.fb.group({
-      remarks: ['', [Validators.required, Validators.maxLength(400)]],
+      remarks: ['', [Validators.required, Validators.maxLength(250)]],
     });
   }
 
@@ -74,7 +74,7 @@ export class LaboratoryAnalysisEditDialogComponent {
     }
 
     if (this.laboratoryAnalysisResultForm.get('remarks')!.hasError('maxlength')) {
-      return 'Remarks cannot exceed 400 characters';
+      return 'Remarks cannot exceed 250 characters';
     }
 
     return '';

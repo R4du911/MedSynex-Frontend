@@ -13,8 +13,8 @@
           <textarea matInput
                     id="remarks"
                     cdkTextareaAutosize
-                    cdkAutosizeMinRows="4"
-                    cdkAutosizeMaxRows="6"
+                    cdkAutosizeMinRows="8"
+                    cdkAutosizeMaxRows="10"
                     formControlName="remarks"></textarea>
           <mat-error *ngIf="laboratoryAnalysisResultForm.get('remarks')!.invalid">{{
               getErrorMessageRemarks()

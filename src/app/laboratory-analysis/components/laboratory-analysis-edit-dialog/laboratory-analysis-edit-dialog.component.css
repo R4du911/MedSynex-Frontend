@@ -53,6 +53,7 @@
   font-size: 1.125rem;
   padding: 0.75rem;
 }
+
 .dialog-header button {
   color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87));
 }
