@@ -142,14 +142,17 @@
     <br>
     <div class="shared-info-item">
       <label>Remarks:</label>
-      <div>{{ laboratoryAnalysisResult.remarks }}</div>
+      <div *ngIf="laboratoryAnalysisResult.remarks">{{ laboratoryAnalysisResult.remarks }}</div>
+      <div *ngIf="!laboratoryAnalysisResult.remarks">No remarks!</div>
     </div>
   </mat-dialog-content>
 
   <mat-dialog-actions class="dialog-actions">
     <div class="action-item">
       <label>Diabetes Risk:</label>
-      <div>{{ laboratoryAnalysisResult.diabetesRisk }}</div>
+      <div *ngIf="laboratoryAnalysisResult.diabetesRisk === true" class="red-text">Yes</div>
+      <div *ngIf="laboratoryAnalysisResult.diabetesRisk === false" class="green-text">No</div>
+      <div *ngIf="laboratoryAnalysisResult.diabetesRisk === null">Not requested!</div>
     </div>
     <div class="action-item">
       <label>Consultation Date:</label>
