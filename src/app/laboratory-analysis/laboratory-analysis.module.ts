@@ -15,6 +15,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { LaboratoryAnalysisEditDialogComponent } from './components/laboratory-analysis-edit-dialog/laboratory-analysis-edit-dialog.component';
 import { LaboratoryAnalysisMoreInfoComponent } from './components/laboratory-analysis-more-info/laboratory-analysis-more-info.component';
+import { LaboratoryAnalysisDiabetesRiskRequestDialogComponent } from './diabetes-risk-prediction/components/laboratory-analysis-diabetes-risk-request-dialog/laboratory-analysis-diabetes-risk-request-dialog.component';
 
 
 
@@ -23,7 +24,8 @@ import { LaboratoryAnalysisMoreInfoComponent } from './components/laboratory-ana
         LaboratoryAnalysisListComponent,
         LaboratoryAnalysisCreateDialogComponent,
         LaboratoryAnalysisEditDialogComponent,
-        LaboratoryAnalysisMoreInfoComponent
+        LaboratoryAnalysisMoreInfoComponent,
+        LaboratoryAnalysisDiabetesRiskRequestDialogComponent
     ],
     exports: [
         LaboratoryAnalysisListComponent

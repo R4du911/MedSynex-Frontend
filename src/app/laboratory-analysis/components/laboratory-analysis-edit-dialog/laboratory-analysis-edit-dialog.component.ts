@@ -1,6 +1,5 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {LaboratoryAnalysisResult} from "../../model/laboratory-analysis-result";
 import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {
   UpdateRemarksLaboratoryAnalysisResultRequestDTO

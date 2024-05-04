@@ -13,6 +13,9 @@ import {
 import {
   LaboratoryAnalysisEditDialogComponent
 } from "../laboratory-analysis-edit-dialog/laboratory-analysis-edit-dialog.component";
+import {
+  LaboratoryAnalysisDiabetesRiskRequestDialogComponent
+} from "../../diabetes-risk-prediction/components/laboratory-analysis-diabetes-risk-request-dialog/laboratory-analysis-diabetes-risk-request-dialog.component";
 
 @Component({
   selector: 'app-laboratory-analysis-list',
@@ -73,7 +76,12 @@ export class LaboratoryAnalysisListComponent implements OnInit, OnDestroy, After
   }
 
   requestDiabetesPrediction(laboratoryAnalysisResult: LaboratoryAnalysisResult) {
-
+    this.dialog.open(LaboratoryAnalysisDiabetesRiskRequestDialogComponent, {
+      data: {
+        laboratoryAnalysisResult: laboratoryAnalysisResult,
+        patientCNP: this.patientCNP
+      }
+    });
   }
 
   protected readonly ERole = ERole;

@@ -1,0 +1,125 @@
+<div class="dialog-header">
+  <span>Request diabetes risk prediction</span>
+  <button mat-icon-button aria-label="Close" (click)="onDialogClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<mat-dialog-content>
+  <div class="diabetes-prediction-request-container">
+    <form class="diabetes-prediction-request-form" [formGroup]="diabetesRiskPredictionRequestForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="pregnancies">Pregnancies</mat-label>
+          <input matInput id="pregnancies" type="number" formControlName="pregnancies" />
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('pregnancies')!.invalid">{{
+              getErrorMessagePregnancies()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="glucose">Glucose</mat-label>
+          <input matInput id="glucose" type="number" formControlName="glucose" />
+          <span class="measurement-unit" matSuffix>mg/dL</span>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="bloodPressure">Blood Pressure</mat-label>
+          <input matInput id="bloodPressure" type="number" formControlName="bloodPressure" />
+          <span class="measurement-unit" matSuffix>mmHg</span>
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('bloodPressure')!.invalid">{{
+              getErrorMessageBloodPressure()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="skinThickness">Skin Thickness</mat-label>
+          <input matInput id="skinThickness" type="number" formControlName="skinThickness" />
+          <span class="measurement-unit" matSuffix>mm</span>
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('skinThickness')!.invalid">{{
+              getErrorMessageSkinThickness()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="insulin">Insulin</mat-label>
+          <input matInput id="insulin" type="number" formControlName="insulin" />
+          <span class="measurement-unit" matSuffix>pmol/L</span>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="height">Height</mat-label>
+          <input matInput id="height" type="number" formControlName="height" />
+          <span class="measurement-unit" matSuffix>cm</span>
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('height')!.invalid">{{
+              getErrorMessageHeight()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="weight">Weight</mat-label>
+          <input matInput id="weight" type="number" formControlName="weight" />
+          <span class="measurement-unit" matSuffix>kg</span>
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('weight')!.invalid">{{
+              getErrorMessageWeight()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="firstDegreeDiabetesCount">First Degree Diabetes Count</mat-label>
+          <input matInput id="firstDegreeDiabetesCount" type="number" formControlName="firstDegreeDiabetesCount" />
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('firstDegreeDiabetesCount')!.invalid">{{
+              getErrorMessageFirstDegreeDiabetesCount()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="secondDegreeDiabetesCount">Second Degree Diabetes Count</mat-label>
+          <input matInput id="secondDegreeDiabetesCount" type="number" formControlName="secondDegreeDiabetesCount" />
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('secondDegreeDiabetesCount')!.invalid">{{
+              getErrorMessageSecondDegreeDiabetesCount()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label for="age">Age</mat-label>
+          <input matInput id="age" type="number" formControlName="age" />
+          <mat-error *ngIf="diabetesRiskPredictionRequestForm.get('age')!.invalid">{{
+              getErrorMessageAge()
+            }}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="loading-modal-footer">
+    <button
+      class="formButton"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="diabetesRiskPredictionRequestForm.invalid"
+      (click)="onSave()"
+    >
+      Submit
+    </button>
+  </div>
+</mat-dialog-actions>

@@ -6,8 +6,10 @@
         <td mat-cell *matCellDef="let element">
           <span *ngIf="element.diabetesRisk === false" class="dot dot-green" matTooltip="No Diabetes Risk"></span>
           <span *ngIf="element.diabetesRisk === true" class="dot dot-red" matTooltip="Diabetes Risk"></span>
-          <button id="prediction-request-button" *ngIf="element.diabetesRisk === null" mat-button
-                  (click)="requestDiabetesPrediction(element)">Request prediction</button>
+          <ng-container *ngIf="element.diabetesRisk === null">
+            <button id="prediction-request-button" *hasRoles="[ERole.FamilyDoctor]" mat-button
+                    (click)="requestDiabetesPrediction(element)">Request prediction</button>
+          </ng-container>
         </td>
       </ng-container>
 
