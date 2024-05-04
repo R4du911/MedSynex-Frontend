@@ -9,6 +9,7 @@
           <ng-container *ngIf="element.diabetesRisk === null">
             <button id="prediction-request-button" *hasRoles="[ERole.FamilyDoctor]" mat-button
                     (click)="requestDiabetesPrediction(element)">Request prediction</button>
+            <span *hasRoles="[ERole.Patient, ERole.Doctor]" class="dot dot-white" matTooltip="Not requested!"></span>
           </ng-container>
         </td>
       </ng-container>

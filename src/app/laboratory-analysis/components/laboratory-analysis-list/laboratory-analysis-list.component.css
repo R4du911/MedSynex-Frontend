@@ -50,6 +50,10 @@ mat-paginator {
   background-color: #e71919;
 }
 
+.dot-white {
+  background-color: antiquewhite;
+}
+
 #prediction-request-button {
   padding: 15px;
   background-color: rgb(34, 140, 128);
