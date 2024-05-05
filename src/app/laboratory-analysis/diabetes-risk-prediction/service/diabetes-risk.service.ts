@@ -14,7 +14,7 @@ export class DiabetesRiskService {
     private diabetesRiskResourceService: DiabetesRiskResourceService
   ) { }
 
-  loadDiabetesRiskPredictionSavedDataByPatient(cnp: number): Observable<DiabetesRiskPredictionSavedData> {
+  loadDiabetesRiskPredictionSavedDataByPatient(cnp: number): Observable<DiabetesRiskPredictionSavedData | null> {
     return this.diabetesRiskResourceService.loadDiabetesRiskPredictionSavedDataByPatient(cnp);
   }
 

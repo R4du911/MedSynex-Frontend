@@ -14,8 +14,8 @@ export class DiabetesRiskResourceService {
     private http: HttpClient
   ) { }
 
-  loadDiabetesRiskPredictionSavedDataByPatient(cnp: number) : Observable<DiabetesRiskPredictionSavedData> {
-    return this.http.get<DiabetesRiskPredictionSavedData>(this.url + '/retrieve-saved-data/' + cnp);
+  loadDiabetesRiskPredictionSavedDataByPatient(cnp: number) : Observable<DiabetesRiskPredictionSavedData | null> {
+    return this.http.get<DiabetesRiskPredictionSavedData | null>(this.url + '/retrieve-saved-data/' + cnp);
   }
 
   requestDiabetesRiskPrediction(cnp: number, diabetesRiskPredictionRequestDTO: DiabetesRiskPredictionRequestDTO): Observable<HttpResponse<string>> {

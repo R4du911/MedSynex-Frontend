@@ -1,7 +1,9 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HandleErrorService} from "../../../../utils/error-handling/service/handle-error.service";
+import {DiabetesRiskService} from "../../service/diabetes-risk.service";
+import {DiabetesRiskPredictionSavedData} from "../../model/diabetes-risk-prediction-saved-data";
 
 @Component({
   selector: 'app-laboratory-analysis-diabetes-risk-request-dialog',
@@ -16,8 +18,16 @@ export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
     private dialogRef: MatDialogRef<LaboratoryAnalysisDiabetesRiskRequestDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private handleErrorService: HandleErrorService,
+    private diabetesRiskService: DiabetesRiskService
   ) {
     this.diabetesRiskPredictionRequestForm = this.setupForm();
+
+    this.diabetesRiskService.loadDiabetesRiskPredictionSavedDataByPatient(this.data.patientCNP)
+      .subscribe((diabetesRiskPredictionSavedData: DiabetesRiskPredictionSavedData | null) => {
+        if (diabetesRiskPredictionSavedData !== null) {
+          this.diabetesRiskPredictionRequestForm.patchValue(diabetesRiskPredictionSavedData);
+        }
+    });
   }
 
   onDialogClose() {
