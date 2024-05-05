@@ -14,7 +14,7 @@ import {LaboratoryAnalysisService} from "../../../service/laboratory-analysis.se
   templateUrl: './laboratory-analysis-diabetes-risk-request-dialog.component.html',
   styleUrls: ['./laboratory-analysis-diabetes-risk-request-dialog.component.css']
 })
-export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
+export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent implements OnInit{
   diabetesRiskPredictionRequestForm: UntypedFormGroup;
 
   constructor(
@@ -26,13 +26,21 @@ export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
     private laboratoryAnalysisResultService: LaboratoryAnalysisService
   ) {
     this.diabetesRiskPredictionRequestForm = this.setupForm();
+  }
 
+  ngOnInit() {
+    this.loadDataAndPatchForm();
+  }
+
+  loadDataAndPatchForm() {
     this.diabetesRiskService.loadDiabetesRiskPredictionSavedDataByPatient(this.data.patientCNP)
       .subscribe((diabetesRiskPredictionSavedData: DiabetesRiskPredictionSavedData | null) => {
         if (diabetesRiskPredictionSavedData !== null) {
           this.diabetesRiskPredictionRequestForm.patchValue(diabetesRiskPredictionSavedData);
+          this.diabetesRiskPredictionRequestForm.markAsTouched();
+          this.diabetesRiskPredictionRequestForm.updateValueAndValidity();
         }
-    });
+      });
   }
 
   onDialogClose() {
@@ -73,8 +81,8 @@ export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
 
       ],
       insulin: [{value: this.data.laboratoryAnalysisResult.insulin, disabled: true}],
-      height: ['', [Validators.required], Validators.pattern(/^\d+(\.\d+)?$/)],
-      weight: ['', [Validators.required], Validators.pattern(/^\d+(\.\d+)?$/)],
+      height: ['', [Validators.required, Validators.pattern(/^\d+(\.\d+)?$/)]],
+      weight: ['', [Validators.required, Validators.pattern(/^\d+(\.\d+)?$/)]],
       firstDegreeDiabetesCount: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
       secondDegreeDiabetesCount: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
       age: ['', [Validators.required, Validators.pattern(/^\d+$/)]]
