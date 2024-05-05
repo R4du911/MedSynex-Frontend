@@ -4,6 +4,10 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {HandleErrorService} from "../../../../utils/error-handling/service/handle-error.service";
 import {DiabetesRiskService} from "../../service/diabetes-risk.service";
 import {DiabetesRiskPredictionSavedData} from "../../model/diabetes-risk-prediction-saved-data";
+import {DiabetesRiskPredictionRequestDTO} from "../../model/diabetes-risk-prediction-request";
+import {take} from "rxjs";
+import {CustomErrorResponse} from "../../../../utils/error-handling/model/custom-error-response";
+import {LaboratoryAnalysisService} from "../../../service/laboratory-analysis.service";
 
 @Component({
   selector: 'app-laboratory-analysis-diabetes-risk-request-dialog',
@@ -18,7 +22,8 @@ export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
     private dialogRef: MatDialogRef<LaboratoryAnalysisDiabetesRiskRequestDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private handleErrorService: HandleErrorService,
-    private diabetesRiskService: DiabetesRiskService
+    private diabetesRiskService: DiabetesRiskService,
+    private laboratoryAnalysisResultService: LaboratoryAnalysisService
   ) {
     this.diabetesRiskPredictionRequestForm = this.setupForm();
 
@@ -35,7 +40,24 @@ export class LaboratoryAnalysisDiabetesRiskRequestDialogComponent {
   }
 
   onSave() {
-    this.dialogRef.close();
+    const formValue = this.diabetesRiskPredictionRequestForm.getRawValue();
+    const diabetesRiskPredictionRequest: DiabetesRiskPredictionRequestDTO = new DiabetesRiskPredictionRequestDTO(
+      this.data.laboratoryAnalysisResult.id, formValue.pregnancies, formValue.glucose, formValue.bloodPressure,
+      formValue.skinThickness, formValue.insulin, formValue.height, formValue.weight, formValue.firstDegreeDiabetesCount,
+      formValue.secondDegreeDiabetesCount, formValue.age);
+
+    this.diabetesRiskService.requestDiabetesRiskPrediction(this.data.patientCNP, diabetesRiskPredictionRequest)
+      .pipe(take(1))
+      .subscribe(() => {
+          this.dialogRef.close();
+          this.handleErrorService.handleSuccess("Successfully requested Diabetes Risk Prediction for the Laboratory " +
+            "Analysis Result with id " + this.data.laboratoryAnalysisResult.id + " of the patient " +
+            "with CNP " + this.data.patientCNP);
+          this.laboratoryAnalysisResultService.loadAllLaboratoryAnalysisResultsByPatient(String(this.data.patientCNP)).pipe(take(1)).subscribe();
+      },
+        (error: CustomErrorResponse) => {
+          this.handleErrorService.handleError(error);
+      });
   }
 
   setupForm() {
