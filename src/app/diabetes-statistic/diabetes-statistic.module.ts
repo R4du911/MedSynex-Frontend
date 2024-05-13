@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DiabetesChartComponent } from './components/diabetes-chart/diabetes-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -12,7 +13,8 @@ import { DiabetesChartComponent } from './components/diabetes-chart/diabetes-cha
         DiabetesChartComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        NgChartsModule
     ]
 })
 export class DiabetesStatisticModule { }

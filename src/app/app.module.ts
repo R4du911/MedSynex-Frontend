@@ -33,6 +33,7 @@ import {ConsultationModule} from "./consultation/consultation.module";
 import {RecordModule} from "./record/record.module";
 import {LaboratoryAnalysisModule} from "./laboratory-analysis/laboratory-analysis.module";
 import {DiabetesStatisticModule} from "./diabetes-statistic/diabetes-statistic.module";
+import { NgChartsModule } from 'ng2-charts';
 
 function initializeAppFactory(
   authorizationService: AuthorizationService,
@@ -83,6 +84,7 @@ function initializeAppFactory(
         }),
         NgOptimizedImage,
         MatCardModule,
+        NgChartsModule,
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true },
