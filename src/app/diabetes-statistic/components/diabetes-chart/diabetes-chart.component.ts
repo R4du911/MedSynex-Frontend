@@ -111,7 +111,6 @@ export class DiabetesChartComponent implements OnInit, OnDestroy, AfterContentIn
       .pipe(takeUntil(this._componentDestroy$))
       .subscribe((laboratoryAnalysisResults: LaboratoryAnalysisResult[]) => {
         this.allLaboratoryAnalysisResults = laboratoryAnalysisResults;
-        console.log(this.allLaboratoryAnalysisResults);
         this.filterDataByDateRange(this.selectedRange);
       });
 
