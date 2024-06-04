@@ -150,7 +150,8 @@ export class DiabetesChartComponent implements OnInit, OnDestroy, AfterContentIn
 
     const filteredResults: LaboratoryAnalysisResult[] = this.allLaboratoryAnalysisResults
       .filter((result: LaboratoryAnalysisResult) => new Date(result.createDate) >= cutoffDate)
-      .filter((result: LaboratoryAnalysisResult) => result.diabetesRisk !== null);
+      .filter((result: LaboratoryAnalysisResult) => result.diabetesRisk !== null)
+      .sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());  // Ensure data is sorted chronologically
 
     this.lineChartData.datasets[0].data = filteredResults.map((laboratoryAnalysisResult: LaboratoryAnalysisResult) => ({
       x: new Date(laboratoryAnalysisResult.createDate) as any,
