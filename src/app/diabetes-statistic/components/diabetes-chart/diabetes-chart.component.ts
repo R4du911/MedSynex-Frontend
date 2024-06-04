@@ -1,8 +1,8 @@
-import {Component, Input, OnDestroy, OnInit, ViewChild, AfterContentInit} from '@angular/core';
-import {Observable, Subject, take, takeUntil} from 'rxjs';
+import { Component, Input, OnDestroy, OnInit, ViewChild, AfterContentInit } from '@angular/core';
+import { Observable, Subject, take, takeUntil } from 'rxjs';
 import { LaboratoryAnalysisResult } from '../../../laboratory-analysis/model/laboratory-analysis-result';
 import { LaboratoryAnalysisService } from '../../../laboratory-analysis/service/laboratory-analysis.service';
-import { ChartConfiguration } from 'chart.js';
+import { ChartConfiguration, Chart } from 'chart.js';
 import 'chartjs-adapter-date-fns';
 import { BaseChartDirective } from "ng2-charts";
 
@@ -72,6 +72,9 @@ export class DiabetesChartComponent implements OnInit, OnDestroy, AfterContentIn
       }
     },
     plugins: {
+      legend: {
+        display: false
+      },
       tooltip: {
         callbacks: {
           title: function (context: any) {
@@ -114,33 +117,12 @@ export class DiabetesChartComponent implements OnInit, OnDestroy, AfterContentIn
         this.filterDataByDateRange(this.selectedRange);
       });
 
-    this.createGradient();
     this.chart?.update();
   }
 
   ngOnDestroy(): void {
     this._componentDestroy$.next();
     this._componentDestroy$.complete();
-  }
-
-  createGradient(): void {
-    const canvas = document.getElementById('diabetes-chart') as HTMLCanvasElement;
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        const data = this.lineChartData.datasets[0].data as any[];
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-
-        data.forEach((point, index) => {
-          const color = point.y === 1 ? '#CD5C5C' : '#5F9EA0';
-          const offset = index / (data.length - 1);
-          gradient.addColorStop(offset, color);
-        });
-
-        this.lineChartData.datasets[0].borderColor = gradient;
-        this.lineChartData.datasets[0].backgroundColor = gradient;
-      }
-    }
   }
 
   filterDataByDateRange(months: number): void {
@@ -151,14 +133,51 @@ export class DiabetesChartComponent implements OnInit, OnDestroy, AfterContentIn
     const filteredResults: LaboratoryAnalysisResult[] = this.allLaboratoryAnalysisResults
       .filter((result: LaboratoryAnalysisResult) => new Date(result.createDate) >= cutoffDate)
       .filter((result: LaboratoryAnalysisResult) => result.diabetesRisk !== null)
-      .sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());  // Ensure data is sorted chronologically
+      .sort((a, b) => new Date(a.createDate).getTime() - new Date(b.createDate).getTime());
 
     this.lineChartData.datasets[0].data = filteredResults.map((laboratoryAnalysisResult: LaboratoryAnalysisResult) => ({
       x: new Date(laboratoryAnalysisResult.createDate) as any,
       y: laboratoryAnalysisResult.diabetesRisk ? 1 : 0
     }));
 
-    this.createGradient();
     this.chart?.update();
   }
 }
+
+Chart.register({
+  id: 'customGradientPlugin',
+  afterDatasetsDraw(chart) {
+    const { ctx, scales: { x, y } } = chart;
+    const dataset = chart.data.datasets[0].data as any[];
+
+    if (!dataset.length) return;
+
+    ctx.save();
+
+    for (let i = 0; i < dataset.length - 1; i++) {
+      const point = dataset[i];
+      const nextPoint = dataset[i + 1];
+
+      const gradient = ctx.createLinearGradient(
+        x.getPixelForValue(point.x),
+        y.getPixelForValue(point.y),
+        x.getPixelForValue(nextPoint.x),
+        y.getPixelForValue(nextPoint.y)
+      );
+      gradient.addColorStop(0, point.y === 1 ? '#CD5C5C' : '#5F9EA0');
+      gradient.addColorStop(1, nextPoint.y === 1 ? '#CD5C5C' : '#5F9EA0');
+
+      ctx.beginPath();
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = 2;
+
+      ctx.moveTo(x.getPixelForValue(point.x), y.getPixelForValue(point.y));
+      ctx.lineTo(x.getPixelForValue(nextPoint.x), y.getPixelForValue(nextPoint.y));
+
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+});
